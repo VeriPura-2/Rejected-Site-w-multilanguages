@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -2428,7 +2428,8 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
       sender.appendChild(img);
       sender.appendChild(nameSpan);
     } else {
-      sender.textContent = 'You';
+      var _vpL=document.documentElement.lang||'en';if(_vpL==='zh-Hans')_vpL='zh';
+      sender.textContent=(window._vpT&&window._vpT[_vpL]&&window._vpT[_vpL].ask_you)||'You';
     }
     const bubble = document.createElement('div');
     bubble.className = 'vera-bubble';
@@ -2713,7 +2714,7 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
         const response = await fetch('https://veripura-chat.tomsoberlin.workers.dev', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, system: window.VERIPURA_SYSTEM_PROMPT, messages: askHistory })
+          body: (function(){var _l=document.documentElement.lang||'en';var _li={'th':' Respond in Thai (ภาษาไทย).','vi':' Respond in Vietnamese (Tiếng Việt).','zh-Hans':' Respond in Simplified Chinese (简体中文).'};var _sp=window.VERIPURA_SYSTEM_PROMPT+(_li[_l]||'');return JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:_sp,messages:askHistory});})(),
         });
         const data = await response.json();
         askHideTyping();
@@ -3424,7 +3425,7 @@ var MAP=[
 ['.footer-copy','footer_copy']
 ];
 
-var _lang='en';
+var _lang='en';window._vpT=T;window._vpMAP=MAP;window._vpApply=function(){applyLang();};
 
 function t(k){var lng=T[_lang];return(lng&&lng[k])||T['en'][k]||k;}
 
@@ -3480,5 +3481,435 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 </script>
 
+<script>
+(function(){
+var X={
+en:{
+stat_l1:'of import refusals are<br>documentation failures <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(TRACES)</cite>',
+stat_l2:'up to, per single<br>FDA detention event <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(FDA Import Program)</cite>',
+stat_l3:'documents or more required for a<br>complex EU food import shipment',
+stat_l4:'avg. to identify source of<br>food contamination <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(industry traceability studies)</cite>',
+risk_l1:'European food import refusals in 2024 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite>',
+risk_l2:'of refusals are documentation failures <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite>',
+risk_l3:'per FDA detention incident <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(FDA Import Program)</cite>',
+risk_l4:'avg. to trace contamination source <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(industry traceability studies)</cite>',
+cpi_title:'Know Your Corridor Risk',
+cpi_desc:'Every sourcing corridor carries a different compliance risk profile. The wider the gap between your origin market\'s CPI score and your destination market\'s expectations, the greater your documentation exposure.',
+cpi_recv_lbl:'Receiving Markets',cpi_recv_val:'UK, Western Europe, Canada &amp; USA',cpi_recv_sub:'avg CPI 79',
+cpi_orig_lbl:'Origin Corridors',cpi_orig_val:'Global South',cpi_orig_sub:'avg CPI 35',
+cpi_gap_arrow:'← point gap →',
+pc1_title:'Per FDA Detention Incident',pc1_desc:'An FDA automatic detention triggered by a documentation error can cost tens of thousands in warehouse fees, re-inspection costs, and lost product — before the goods ever reach a buyer.',
+pc2_title:'EU Food Import Refusals in 2024',pc2_desc:'EU border control refusals reached over 14,000 for animal-origin food products in 2024 alone. New regulations including EU 2017/625 and EUDR continue to raise the documentation bar.',
+pc3_title:'FDA Examination Time Per Shipment',pc3_desc:'The FDA states that shipment examination can take "from a few hours to several weeks" if laboratory analysis is required. Every day compounds storage fees, spoilage risk, and buyer penalties.',
+pc4_title:'Average Contamination Identification Time',pc4_desc:'When contamination occurs, identifying the source through fragmented paper records takes an average of 14 days. VeriPura\'s immutable chain of custody compresses this significantly.',
+err_label:'Most common documentation errors caught by VeriPura',
+err1_t:'Authority signature mismatch',err1_d:'Phytosanitary or health certificate signed by an authority not recognised by the destination market.',
+err2_t:'FDA Prior Notice code error',err2_d:'Incorrect or missing product description code causes automatic detention by FDA PREDICT.',
+err3_t:'TRACES NT format rejection',err3_d:'Common Entry Document format or missing field prevents TRACES NT acceptance before arrival.',
+err4_t:'Expired certificate at arrival',err4_d:'Certificate valid at issue date but expired by the time the shipment reaches the border inspection post.',
+err5_t:'Establishment number mismatch',err5_d:'Slaughter or processing establishment number does not match the destination market\'s approved list.',
+err6_t:'Missing EUDR due diligence records',err6_d:'No geolocation data or deforestation statement for EUDR-affected commodities — rejection at EU border.',
+imp_m1_l:'Avg. to identify food contamination source without traceability',imp_m2_l:'vs. hours for full compliance review',imp_m3_l:'Structured workflow, not a black box',imp_m4_l:'Blockchain-anchored tamperproof audit trail',
+imp_p1:'Validate all import documents before departure, not at the border',imp_p2:'Automatic checks against EU 2017/625, FDA FSMA, and UK FRCR requirements',imp_p3:'Real-time risk scoring by sourcing corridor and product category',imp_p4:'Immutable compliance records for audits and buyer due diligence',
+imp_corr_lbl:'Regulatory Frameworks Covered',imp_callout_p:'We are deliberately selective. Founding participants help shape the product, complete the pilot at no cost, and receive preferential pricing when they convert.',
+ff_m1_l:'Multi-shipment processing in one workflow',ff_m2_l:'Connects to your existing systems',ff_m3_l:'Client compliance reports, zero manual prep',ff_m4_l:'Always-on verification, no staff bottleneck',
+ff_p1:'Batch-process compliance checks across multiple active shipments',ff_p2:'Instant flag on expiry dates, missing signatures, authority mismatches',ff_p3:'Client-facing compliance reports generated automatically',ff_p4:'API integration with your existing TMS or document management system',
+ff_corr_lbl:'Frameworks Supported',ff_callout_p:'Founding partners help shape the channel programme, complete the pilot at no cost, and receive preferential pricing when they convert.',
+car_m1_l:'Arrival compliance review before port',car_m2_l:'Per-incident detention cost avoided',car_m3_l:'Immutable custody for liability protection',car_m4_l:'Remediation guidance, not just red flags',
+car_p1:'Pre-arrival compliance scoring for all food cargo manifests',car_p2:'Instant identification of shipments at risk of customs hold',car_p3:'Immutable chain of custody for liability protection',car_p4:'Structured remediation guidance — not just flags, but fixes',
+car_corr_lbl:'Common ports of entry',car_callout_p:'Founding partners help shape the channel programme, complete the pilot at no cost, and receive preferential pricing when they convert.',
+tc1_t:'Document AI Engine',tc1_d:'VeriPura\'s document intelligence layer extracts and validates data from any format — PDFs, scanned certificates, multi-language documents — in seconds, not hours.',tc1_tag:'Multi-format · Multi-language',
+tc2_t:'Regulatory Rule Engine',tc2_d:'A regularly maintained library of food import requirements across Europe, US, UK and beyond — checked against every document field in real time.',tc2_tag:'Europe · FDA · UK · EUDR',
+tc3_t:'IOTA Blockchain Ledger',tc3_d:'Every compliance verdict is anchored to the IOTA Rebased blockchain — an immutable, tamperproof record any authorised party can verify instantly.',tc3_tag:'IOTA Rebased · TWIN',
+tc4_t:'Risk Corridor Intelligence',tc4_d:'Built on FDA refusal data, European TRACES rejection statistics, and UK border intelligence, VeriPura scores every sourcing corridor by risk profile.',tc4_tag:'Based on 65,000+ FDA Refusal Database records',
+tc5_t:'Verifiable Credentials',tc5_d:'Using IOTA Identity and W3C Verifiable Credentials, VeriPura issues machine-readable compliance attestations shareable instantly with buyers, auditors, and border authorities.',tc5_tag:'W3C VCs · IOTA Identity',
+tc6_t:'API & System Integration',tc6_d:'VeriPura connects via API to your existing TMS, ERP, or document management system. Compliance intelligence layered on top of your current workflow.',tc6_tag:'API · Webhook',
+exp_label:'Platform Expansion',exp_s1:'Food',exp_s2:'Vitamins & Supplements',exp_s3:'Pharmaceuticals',exp_s4:'Cosmetics',exp_s5:'Pet Food',
+ch_c1_t:'Revenue Share on Every Shipment',ch_c1_d:'Channel partners earn a share of VeriPura subscription and per-shipment attestation revenue for every client they introduce.',
+ch_c2_t:'Protect Yourself from Client Liability',ch_c2_d:'When a shipment is rejected at the border, the importer looks to their forwarder first. VeriPura gives you a documented, blockchain-attested record of every compliance check performed.',
+ch_c3_t:'Extend Your Service Offering',ch_c3_d:'VeriPura compliance validation becomes a value-added service you offer alongside freight. Clients sourcing from high-risk corridors need this capability now.',
+ch_ps1_l:'Food shipments refused EU entry in 2024',ch_ps2_l:'Of refusals caused by documentation failures',ch_ps3_l:'Up to, per single FDA detention incident',ch_ps4_l:'Avg. to identify a food contamination source',
+onno_title:'CEO & Co-Founder',thomas_title:'COO & Co-Founder',
+onno_bio:'18+ years operating in food export and import compliance across Southeast Asia and Europe. EU food import compliance expert with an active network across the Netherlands, Switzerland and Germany. The regulatory knowledge encoded in VeriPura\'s compliance engine is his institutional expertise.',
+thomas_bio:'Serial entrepreneur and patent holder with €14M raised across prior ventures. Founder of the first Controlled Environment Agriculture company in South America. Italy-based with extensive go-to-market background in innovative B2B environments.',
+app_c1_name:'VeriPura Label',app_c1_desc:'AI-powered food label compliance checker. Upload any food label and instantly validate it against legal requirements for your target market — ingredients, allergen declarations, nutritional claims, and mandatory regulatory fields.',app_c1_link:'Check a Food Label for Compliance →',
+app_c2_name:'VeriPura Nutritional',app_c2_desc:'Automated nutritional analysis and verification. Calculate and verify nutritional facts for complex recipes — replacing slow manual paperwork with instant, accurate nutritional profiles.',app_c2_link:'Verify a Nutritional Declaration →',
+app_c3_name:'More Coming Soon',app_c3_desc:'We are continuously building new applets targeting the highest-friction points in food import compliance. Modules in development include full shipment document validation and sustainability due diligence reporting.',
+pilot_imp_lbl:'Importer slots',pilot_par_lbl:'Partner slots',
+pilot_lead:'We are deliberately selective. Founding participants work directly with Onno and Thomas — not an onboarding team — to run a live pilot against their real shipments.',
+pilot_p1:'The pilot is free. No commitment required to participate.',
+pilot_p2:'Founding participants receive preferential pricing when they convert — not available to later clients.',
+pilot_p3:'You help shape what VeriPura prioritises — the corridors, frameworks, and document types that matter most.',
+pilot_p4:'EUDR enforcement is live. FSMA 204 is in effect. The window to get ahead of this is now.',
+pilot_cal_lbl:'Prefer to talk first?',pilot_cal_link:'Schedule a call with Onno & Thomas →',
+succ_title:'Message received.',succ_body:'Onno or Thomas will be in touch within one business day.',
+wto_label:'LIVE REGULATORY INTELLIGENCE',chat_title:'VeriPura · Ask the Founders',chat_sub:'Automated assistant · Onno & Thomas answer',ask_you:'You'
+},
+th:{
+stat_l1:'ของการปฏิเสธนำเข้า<br>เกิดจากความล้มเหลวด้านเอกสาร <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(TRACES)</cite>',
+stat_l2:'สูงสุด ต่อเหตุการณ์<br>กักตั้งของ FDA ครั้งเดียว <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(FDA Import Program)</cite>',
+stat_l3:'เอกสารหรือมากกว่าที่ต้องใช้<br>สำหรับการนำเข้าอาหาร EU ที่ซับซ้อน',
+stat_l4:'เฉลี่ยในการระบุแหล่งที่มา<br>ของการปนเปื้อนอาหาร <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(การศึกษาการตรวจสอบย้อนกลับ)</cite>',
+risk_l1:'การปฏิเสธนำเข้าอาหารของยุโรปในปี 2024 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite>',
+risk_l2:'ของการปฏิเสธเกิดจากความล้มเหลวด้านเอกสาร <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite>',
+risk_l3:'ต่อเหตุการณ์กักตั้ง FDA ครั้งหนึ่ง <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(FDA Import Program)</cite>',
+risk_l4:'เฉลี่ยในการตามรอยแหล่งปนเปื้อน <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(การศึกษาการตรวจสอบย้อนกลับ)</cite>',
+cpi_title:'รู้จักความเสี่ยงของเส้นทางคุณ',
+cpi_desc:'แต่ละเส้นทางการจัดหามีโปรไฟล์ความเสี่ยงการปฏิบัติตามข้อกำหนดที่แตกต่างกัน ยิ่งช่องว่างระหว่างคะแนน CPI ของตลาดต้นทางกับความคาดหวังของปลายทางกว้างขึ้น ความเสี่ยงด้านเอกสารของคุณก็ยิ่งสูงขึ้น',
+cpi_recv_lbl:'ตลาดปลายทาง',cpi_recv_val:'สหราชอาณาจักร ยุโรปตะวันตก แคนาดา &amp; สหรัฐฯ',cpi_recv_sub:'CPI เฉลี่ย 79',
+cpi_orig_lbl:'เส้นทางต้นทาง',cpi_orig_val:'กลุ่มประเทศกำลังพัฒนา',cpi_orig_sub:'CPI เฉลี่ย 35',
+cpi_gap_arrow:'← ช่องว่างคะแนน →',
+pc1_title:'ต่อเหตุการณ์กักตั้ง FDA',pc1_desc:'การกักตั้งอัตโนมัติของ FDA ที่เกิดจากข้อผิดพลาดในเอกสารอาจมีค่าใช้จ่ายหลักหมื่นในค่าคลังสินค้า ค่าตรวจสอบซ้ำ และสินค้าที่สูญเสีย',
+pc2_title:'การปฏิเสธนำเข้าอาหาร EU ในปี 2024',pc2_desc:'การปฏิเสธของด่านควบคุมชายแดน EU เกิน 14,000 ครั้งสำหรับผลิตภัณฑ์อาหารจากสัตว์ในปี 2024 เพียงปีเดียว กฎระเบียบใหม่ยังคงยกระดับมาตรฐานเอกสาร',
+pc3_title:'เวลาตรวจสอบ FDA ต่อการขนส่ง',pc3_desc:'FDA ระบุว่าการตรวจสอบการขนส่งอาจใช้เวลา "ไม่กี่ชั่วโมงถึงหลายสัปดาห์" ทุกวันที่คอนเทนเนอร์ติดอยู่ที่ท่าเรือทำให้ค่าใช้จ่ายเพิ่มขึ้น',
+pc4_title:'เวลาระบุการปนเปื้อนเฉลี่ย',pc4_desc:'เมื่อเกิดการปนเปื้อน การระบุแหล่งที่มาผ่านบันทึกกระดาษที่กระจัดกระจายใช้เวลาเฉลี่ย 14 วัน ห่วงโซ่การควบคุมที่ไม่เปลี่ยนแปลงของ VeriPura บีบอัดเวลานี้อย่างมีนัยสำคัญ',
+err_label:'ข้อผิดพลาดในเอกสารที่พบบ่อยที่สุดที่ VeriPura ตรวจพบ',
+err1_t:'ลายเซ็นหน่วยงานไม่ตรงกัน',err1_d:'ใบรับรองสุขอนามัยพืชหรือใบรับรองสุขภาพลงนามโดยหน่วยงานที่ตลาดปลายทางไม่รับรอง',
+err2_t:'รหัส FDA Prior Notice ผิดพลาด',err2_d:'รหัสคำอธิบายผลิตภัณฑ์ที่ผิดพลาดหรือหายไปทำให้ระบบ FDA PREDICT กักตั้งอัตโนมัติ',
+err3_t:'TRACES NT ปฏิเสธรูปแบบ',err3_d:'รูปแบบ CED ผิดพลาดหรือขาดช่องข้อมูลทำให้ TRACES NT ไม่รับก่อนถึง',
+err4_t:'ใบรับรองหมดอายุเมื่อถึงปลายทาง',err4_d:'ใบรับรองที่ยังใช้ได้ ณ วันออก แต่หมดอายุเมื่อสินค้าถึงด่านตรวจชายแดน',
+err5_t:'หมายเลขสถานประกอบการไม่ตรงกัน',err5_d:'หมายเลขโรงฆ่าสัตว์หรือโรงแปรรูปไม่ตรงกับรายการที่ได้รับอนุมัติของตลาดปลายทาง',
+err6_t:'ขาดเอกสาร EUDR',err6_d:'ไม่มีข้อมูลพิกัดทางภูมิศาสตร์หรือคำแถลงการตัดไม้ทำลายป่าสำหรับสินค้าที่ได้รับผลกระทบจาก EUDR — ถูกปฏิเสธที่ชายแดน EU',
+imp_m1_l:'เฉลี่ยในการระบุแหล่งปนเปื้อนอาหารโดยไม่มีการตรวจสอบย้อนกลับ',imp_m2_l:'เทียบกับหลายชั่วโมงสำหรับการตรวจสอบการปฏิบัติตามข้อกำหนดทั้งหมด',imp_m3_l:'ขั้นตอนที่มีโครงสร้าง ไม่ใช่กล่องดำ',imp_m4_l:'เส้นทางการตรวจสอบที่ยืนยันบนบล็อกเชนและป้องกันการปลอมแปลง',
+imp_p1:'ตรวจสอบเอกสารนำเข้าทั้งหมดก่อนออกเดินทาง ไม่ใช่ที่ชายแดน',imp_p2:'การตรวจสอบอัตโนมัติตาม EU 2017/625, FDA FSMA และ UK FRCR',imp_p3:'การให้คะแนนความเสี่ยงแบบเรียลไทม์ตามเส้นทางการจัดหาและหมวดหมู่สินค้า',imp_p4:'บันทึกการปฏิบัติตามข้อกำหนดที่ไม่เปลี่ยนแปลงสำหรับการตรวจสอบและการตรวจสอบวิเคราะห์สถานะผู้ซื้อ',
+imp_corr_lbl:'กรอบกฎระเบียบที่ครอบคลุม',imp_callout_p:'เราคัดเลือกอย่างรอบคอบ ผู้เข้าร่วมผู้ก่อตั้งช่วยกำหนดทิศทางผลิตภัณฑ์ ทำนำร่องโดยไม่มีค่าใช้จ่าย และได้รับราคาพิเศษเมื่อเปลี่ยนมาใช้งาน',
+ff_m1_l:'การประมวลผลหลายการขนส่งในเวิร์กโฟลว์เดียว',ff_m2_l:'เชื่อมต่อกับระบบที่มีอยู่ของคุณ',ff_m3_l:'รายงานการปฏิบัติตามข้อกำหนดสำหรับลูกค้า ไม่ต้องเตรียมด้วยตนเอง',ff_m4_l:'การยืนยันตลอด 24/7 ไม่มีคอขวดด้านพนักงาน',
+ff_p1:'ประมวลผลการตรวจสอบการปฏิบัติตามข้อกำหนดแบบกลุ่มในหลายการขนส่ง',ff_p2:'แจ้งเตือนทันทีสำหรับวันหมดอายุ ลายเซ็นที่หายไป และหน่วยงานไม่ตรงกัน',ff_p3:'รายงานการปฏิบัติตามข้อกำหนดสำหรับลูกค้าที่สร้างโดยอัตโนมัติ',ff_p4:'การผสานรวม API กับ TMS หรือระบบการจัดการเอกสารที่มีอยู่ของคุณ',
+ff_corr_lbl:'กรอบกฎระเบียบที่รองรับ',ff_callout_p:'พาร์ทเนอร์ผู้ก่อตั้งช่วยกำหนดทิศทางโปรแกรมช่องทาง ทำนำร่องโดยไม่มีค่าใช้จ่าย และได้รับราคาพิเศษเมื่อเปลี่ยนมาใช้งาน',
+car_m1_l:'การตรวจสอบการปฏิบัติตามข้อกำหนดก่อนถึงท่าเรือ',car_m2_l:'ค่าใช้จ่ายการกักตั้งต่อเหตุการณ์ที่หลีกเลี่ยงได้',car_m3_l:'ห่วงโซ่การควบคุมที่ไม่เปลี่ยนแปลงสำหรับการปกป้องความรับผิด',car_m4_l:'คำแนะนำการแก้ไข ไม่ใช่แค่ธงแดง',
+car_p1:'การให้คะแนนการปฏิบัติตามข้อกำหนดก่อนถึงสำหรับสินค้าอาหารทั้งหมด',car_p2:'การระบุทันทีของการขนส่งที่เสี่ยงต่อการกักตั้งศุลกากร',car_p3:'ห่วงโซ่การควบคุมที่ไม่เปลี่ยนแปลงสำหรับการปกป้องความรับผิด',car_p4:'คำแนะนำการแก้ไขอย่างมีโครงสร้าง — ไม่ใช่แค่ธง แต่รวมถึงการแก้ไข',
+car_corr_lbl:'ท่าเรือหลักที่ VeriPura ตรวจสอบ',car_callout_p:'พาร์ทเนอร์ผู้ก่อตั้งช่วยกำหนดทิศทางโปรแกรมช่องทาง ทำนำร่องโดยไม่มีค่าใช้จ่าย และได้รับราคาพิเศษ',
+tc1_t:'เครื่องมือ AI ด้านเอกสาร',tc1_d:'เลเยอร์ข้อมูลอัจฉริยะของ VeriPura ดึงและตรวจสอบข้อมูลจากทุกรูปแบบ — PDF ใบรับรองที่สแกน เอกสารหลายภาษา — ในวินาทีไม่ใช่ชั่วโมง',tc1_tag:'หลายรูปแบบ · หลายภาษา',
+tc2_t:'เครื่องมือกฎระเบียบ',tc2_d:'ไลบรารีที่ดูแลรักษาสม่ำเสมอของข้อกำหนดการนำเข้าอาหารทั่วยุโรป สหรัฐฯ สหราชอาณาจักร — ตรวจสอบกับทุกช่องในเอกสารแบบเรียลไทม์',tc2_tag:'ยุโรป · FDA · สหราชอาณาจักร · EUDR',
+tc3_t:'บัญชีแยกประเภทบล็อกเชน IOTA',tc3_d:'ผลการตัดสินการปฏิบัติตามข้อกำหนดทุกรายการถูกยึดบนบล็อกเชน IOTA Rebased — บันทึกที่ไม่เปลี่ยนแปลงและป้องกันการปลอมแปลง',tc3_tag:'IOTA Rebased · TWIN',
+tc4_t:'ข้อมูลความเสี่ยงเส้นทาง',tc4_d:'สร้างบนข้อมูลการปฏิเสธของ FDA สถิติการปฏิเสธ TRACES ของยุโรป VeriPura ให้คะแนนทุกเส้นทางการจัดหาตามโปรไฟล์ความเสี่ยง',tc4_tag:'อ้างอิงจากฐานข้อมูลการปฏิเสธ FDA 65,000+ รายการ',
+tc5_t:'ข้อมูลรับรองที่ตรวจสอบได้',tc5_d:'ใช้ IOTA Identity และ W3C Verifiable Credentials VeriPura ออกการรับรองการปฏิบัติตามข้อกำหนดที่อ่านได้ด้วยเครื่องแชร์ได้ทันที',tc5_tag:'W3C VCs · IOTA Identity',
+tc6_t:'API & การผสานรวมระบบ',tc6_d:'VeriPura เชื่อมต่อผ่าน API กับ TMS ERP หรือระบบการจัดการเอกสารที่มีอยู่ของคุณ ข้อมูลการปฏิบัติตามข้อกำหนดที่เพิ่มเข้าไปบนเวิร์กโฟลว์ปัจจุบัน',tc6_tag:'API · Webhook',
+exp_label:'การขยายแพลตฟอร์ม',exp_s1:'อาหาร',exp_s2:'วิตามิน & ผลิตภัณฑ์เสริมอาหาร',exp_s3:'เภสัชภัณฑ์',exp_s4:'เครื่องสำอาง',exp_s5:'อาหารสัตว์เลี้ยง',
+ch_c1_t:'แบ่งปันรายได้ทุกการขนส่ง',ch_c1_d:'พาร์ทเนอร์ช่องทางได้รับส่วนแบ่งจากรายได้การสมัครสมาชิก VeriPura และรายได้การรับรองต่อการขนส่งสำหรับทุกลูกค้าที่แนะนำ',
+ch_c2_t:'ปกป้องตนเองจากความรับผิดต่อลูกค้า',ch_c2_d:'เมื่อสินค้าถูกปฏิเสธที่ชายแดน ผู้นำเข้ามองไปที่ผู้ขนส่งก่อน VeriPura ให้บันทึกที่ยืนยันบนบล็อกเชนสำหรับการตรวจสอบทุกครั้ง',
+ch_c3_t:'ขยายการให้บริการของคุณ',ch_c3_d:'การตรวจสอบการปฏิบัติตามข้อกำหนด VeriPura กลายเป็นบริการมูลค่าเพิ่มที่คุณนำเสนอควบคู่กับการขนส่ง',
+ch_ps1_l:'การขนส่งอาหารที่ถูกปฏิเสธเข้า EU ในปี 2024',ch_ps2_l:'ของการปฏิเสธเกิดจากความล้มเหลวด้านเอกสาร',ch_ps3_l:'สูงสุด ต่อเหตุการณ์กักตั้ง FDA ครั้งเดียว',ch_ps4_l:'เฉลี่ยในการระบุแหล่งปนเปื้อนอาหาร',
+onno_title:'CEO & ผู้ร่วมก่อตั้ง',thomas_title:'COO & ผู้ร่วมก่อตั้ง',
+onno_bio:'มีประสบการณ์กว่า 18 ปีในการดำเนินงานด้านการส่งออกและนำเข้าอาหารในเอเชียตะวันออกเฉียงใต้และยุโรป ผู้เชี่ยวชาญการปฏิบัติตามข้อกำหนดนำเข้าอาหาร EU พร้อมเครือข่ายในเนเธอร์แลนด์ สวิตเซอร์แลนด์ และเยอรมนี',
+thomas_bio:'ผู้ประกอบการอนุกรมและผู้ถือสิทธิบัตรที่ระดมทุนได้ 14 ล้านยูโรในองค์กรก่อนหน้า ผู้ก่อตั้งบริษัท Controlled Environment Agriculture แห่งแรกในอเมริกาใต้ ตั้งอยู่ในอิตาลีพร้อมประสบการณ์ go-to-market B2B ที่กว้างขวาง',
+app_c1_name:'VeriPura Label',app_c1_desc:'ตัวตรวจสอบการปฏิบัติตามข้อกำหนดฉลากอาหารที่ขับเคลื่อนด้วย AI อัปโหลดฉลากอาหารใดก็ได้และตรวจสอบทันทีตามข้อกำหนดทางกฎหมายสำหรับตลาดเป้าหมายของคุณ',app_c1_link:'ตรวจสอบฉลากอาหารเพื่อการปฏิบัติตาม →',
+app_c2_name:'VeriPura Nutritional',app_c2_desc:'การวิเคราะห์และยืนยันโภชนาการอัตโนมัติ คำนวณและตรวจสอบข้อเท็จจริงทางโภชนาการสำหรับสูตรที่ซับซ้อน แทนที่เอกสารด้วยตนเองด้วยโปรไฟล์โภชนาการที่รวดเร็วและแม่นยำ',app_c2_link:'ตรวจสอบการประกาศทางโภชนาการ →',
+app_c3_name:'เพิ่มเติมเร็วๆ นี้',app_c3_desc:'เรากำลังสร้างแอปเพล็ตใหม่อย่างต่อเนื่องที่กำหนดเป้าหมายจุดที่มีความยุ่งยากสูงสุดในการปฏิบัติตามข้อกำหนดนำเข้าอาหาร โมดูลที่กำลังพัฒนา ได้แก่ ตัวตรวจสอบเอกสารการขนส่งและการรายงานการตรวจสอบวิเคราะห์สถานะ',
+pilot_imp_lbl:'ที่นั่งผู้นำเข้า',pilot_par_lbl:'ที่นั่งพาร์ทเนอร์',
+pilot_lead:'เราคัดเลือกอย่างรอบคอบ ผู้เข้าร่วมผู้ก่อตั้งทำงานโดยตรงกับ Onno และ Thomas เพื่อดำเนินนำร่องสดกับการขนส่งจริงของพวกเขา',
+pilot_p1:'โปรแกรมนำร่องฟรี ไม่ต้องมีความมุ่งมั่นในการเข้าร่วม',
+pilot_p2:'ผู้เข้าร่วมผู้ก่อตั้งได้รับราคาพิเศษเมื่อเปลี่ยนมาใช้งาน — ไม่มีสำหรับลูกค้าในภายหลัง',
+pilot_p3:'คุณช่วยกำหนดทิศทางสิ่งที่ VeriPura ให้ความสำคัญ — เส้นทาง กรอบกฎระเบียบ และประเภทเอกสาร',
+pilot_p4:'การบังคับใช้ EUDR มีผลแล้ว FSMA 204 มีผลบังคับใช้แล้ว หน้าต่างในการก้าวนำคือตอนนี้',
+pilot_cal_lbl:'ต้องการคุยก่อนไหม?',pilot_cal_link:'นัดหมายกับ Onno & Thomas →',
+succ_title:'ได้รับข้อความแล้ว',succ_body:'Onno หรือ Thomas จะติดต่อภายในหนึ่งวันทำการ',
+wto_label:'ข้อมูลกฎระเบียบสด',chat_title:'VeriPura · ถามผู้ก่อตั้ง',chat_sub:'ผู้ช่วยอัตโนมัติ · Onno & Thomas ตอบ',ask_you:'คุณ'
+},
+vi:{
+stat_l1:'lô hàng nhập khẩu bị từ chối<br>do lỗi tài liệu <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(TRACES)</cite>',
+stat_l2:'tối đa, mỗi lần<br>bị FDA tạm giữ <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(FDA Import Program)</cite>',
+stat_l3:'tài liệu trở lên cần cho<br>một lô hàng nhập khẩu thực phẩm EU phức tạp',
+stat_l4:'trung bình để xác định nguồn<br>ô nhiễm thực phẩm <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(nghiên cứu truy xuất ngành)</cite>',
+risk_l1:'Lô hàng thực phẩm bị EU từ chối năm 2024 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite>',
+risk_l2:'Tỷ lệ từ chối do lỗi tài liệu <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite>',
+risk_l3:'Mỗi vụ bị FDA tạm giữ <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(FDA Import Program)</cite>',
+risk_l4:'Trung bình truy xuất nguồn ô nhiễm <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(nghiên cứu truy xuất ngành)</cite>',
+cpi_title:'Biết Rủi Ro Hành Lang Của Bạn',
+cpi_desc:'Mỗi hành lang cung ứng có hồ sơ rủi ro tuân thủ khác nhau. Khoảng cách điểm CPI giữa thị trường xuất xứ và kỳ vọng thị trường đích càng lớn, mức độ rủi ro tài liệu của bạn càng cao.',
+cpi_recv_lbl:'Thị Trường Nhận Hàng',cpi_recv_val:'Anh, Tây Âu, Canada &amp; Mỹ',cpi_recv_sub:'CPI trung bình 79',
+cpi_orig_lbl:'Hành Lang Xuất Xứ',cpi_orig_val:'Miền Nam Toàn Cầu',cpi_orig_sub:'CPI trung bình 35',
+cpi_gap_arrow:'← khoảng cách điểm →',
+pc1_title:'Mỗi Vụ Bị FDA Tạm Giữ',pc1_desc:'Lệnh tạm giữ tự động của FDA do lỗi tài liệu có thể tiêu tốn hàng chục nghìn đô trong phí kho bãi, chi phí tái kiểm tra và hàng hóa bị mất.',
+pc2_title:'Lô Hàng Thực Phẩm EU Bị Từ Chối Năm 2024',pc2_desc:'Từ chối kiểm soát biên giới EU vượt 14.000 lần cho sản phẩm thực phẩm động vật năm 2024. Các quy định mới tiếp tục nâng cao tiêu chuẩn tài liệu.',
+pc3_title:'Thời Gian FDA Kiểm Tra Mỗi Lô Hàng',pc3_desc:'FDA cho biết kiểm tra lô hàng có thể mất "vài giờ đến vài tuần". Mỗi ngày container nằm tại cảng làm tăng chi phí lưu kho, rủi ro hư hỏng và phạt từ người mua.',
+pc4_title:'Thời Gian Xác Định Ô Nhiễm Trung Bình',pc4_desc:'Khi xảy ra ô nhiễm, xác định nguồn qua hồ sơ giấy phân tán mất trung bình 14 ngày. Chuỗi bảo quản bất biến của VeriPura rút ngắn thời gian này đáng kể.',
+err_label:'Lỗi tài liệu phổ biến nhất VeriPura phát hiện',
+err1_t:'Chữ ký cơ quan không khớp',err1_d:'Chứng chỉ kiểm dịch thực vật hoặc sức khỏe được ký bởi cơ quan thị trường đích không công nhận.',
+err2_t:'Lỗi mã FDA Prior Notice',err2_d:'Mã mô tả sản phẩm sai hoặc thiếu gây ra lệnh tạm giữ tự động bởi FDA PREDICT.',
+err3_t:'TRACES NT từ chối định dạng',err3_d:'Định dạng CED sai hoặc thiếu trường ngăn TRACES NT chấp nhận trước khi đến.',
+err4_t:'Chứng chỉ hết hạn khi đến',err4_d:'Chứng chỉ còn hiệu lực tại ngày cấp nhưng hết hạn khi lô hàng đến trạm kiểm tra biên giới.',
+err5_t:'Số cơ sở không khớp',err5_d:'Số cơ sở giết mổ hoặc chế biến không khớp với danh sách được chấp thuận của thị trường đích.',
+err6_t:'Thiếu hồ sơ EUDR',err6_d:'Không có dữ liệu địa lý hoặc tuyên bố phá rừng cho hàng hóa bị EUDR ảnh hưởng — bị từ chối tại biên giới EU.',
+imp_m1_l:'Trung bình xác định nguồn ô nhiễm thực phẩm không có truy xuất',imp_m2_l:'So với nhiều giờ để xem xét tuân thủ đầy đủ',imp_m3_l:'Quy trình có cấu trúc, không phải hộp đen',imp_m4_l:'Nhật ký kiểm toán bất biến được gắn blockchain',
+imp_p1:'Xác minh tất cả tài liệu nhập khẩu trước khi khởi hành, không phải tại biên giới',imp_p2:'Kiểm tra tự động theo EU 2017/625, FDA FSMA và UK FRCR',imp_p3:'Chấm điểm rủi ro theo thời gian thực theo hành lang cung ứng và danh mục sản phẩm',imp_p4:'Hồ sơ tuân thủ bất biến cho kiểm toán và thẩm định người mua',
+imp_corr_lbl:'Khung Pháp Lý Được Bao Phủ',imp_callout_p:'Chúng tôi có chọn lọc một cách cẩn thận. Thành viên sáng lập giúp định hình sản phẩm, thực hiện thử nghiệm miễn phí và nhận giá ưu đãi khi chuyển đổi.',
+ff_m1_l:'Xử lý nhiều lô hàng trong một quy trình',ff_m2_l:'Kết nối với hệ thống hiện có của bạn',ff_m3_l:'Báo cáo tuân thủ cho khách hàng, không cần chuẩn bị thủ công',ff_m4_l:'Xác minh 24/7, không có nút cổ chai nhân sự',
+ff_p1:'Xử lý hàng loạt kiểm tra tuân thủ trên nhiều lô hàng đang hoạt động',ff_p2:'Phát hiện ngay ngày hết hạn, chữ ký thiếu, cơ quan không khớp',ff_p3:'Báo cáo tuân thủ cho khách hàng được tạo tự động',ff_p4:'Tích hợp API với TMS hoặc hệ thống quản lý tài liệu hiện có',
+ff_corr_lbl:'Khung Pháp Lý Được Hỗ Trợ',ff_callout_p:'Đối tác sáng lập giúp định hình chương trình kênh, thực hiện thử nghiệm miễn phí và nhận giá ưu đãi.',
+car_m1_l:'Xem xét tuân thủ trước khi đến cảng',car_m2_l:'Chi phí tạm giữ mỗi vụ được tránh',car_m3_l:'Chuỗi bảo quản bất biến để bảo vệ trách nhiệm',car_m4_l:'Hướng dẫn khắc phục, không chỉ cờ đỏ',
+car_p1:'Chấm điểm tuân thủ trước khi đến cho tất cả danh sách hàng thực phẩm',car_p2:'Xác định ngay lô hàng có nguy cơ bị hải quan giữ',car_p3:'Chuỗi bảo quản bất biến để bảo vệ trách nhiệm',car_p4:'Hướng dẫn khắc phục có cấu trúc — không chỉ cờ, mà còn sửa chữa',
+car_corr_lbl:'Cảng nhập khẩu phổ biến',car_callout_p:'Đối tác sáng lập giúp định hình chương trình kênh, thực hiện thử nghiệm miễn phí và nhận giá ưu đãi.',
+tc1_t:'Công Cụ AI Tài Liệu',tc1_d:'Lớp thông minh tài liệu của VeriPura trích xuất và xác nhận dữ liệu từ mọi định dạng — PDF, chứng chỉ scan, tài liệu đa ngôn ngữ — trong vài giây.',tc1_tag:'Đa định dạng · Đa ngôn ngữ',
+tc2_t:'Công Cụ Quy Tắc Pháp Lý',tc2_d:'Thư viện yêu cầu nhập khẩu thực phẩm được duy trì thường xuyên trên toàn châu Âu, Mỹ, Anh — kiểm tra với mọi trường tài liệu theo thời gian thực.',tc2_tag:'Châu Âu · FDA · Anh · EUDR',
+tc3_t:'Sổ Cái Blockchain IOTA',tc3_d:'Mọi phán quyết tuân thủ được gắn vào blockchain IOTA Rebased — hồ sơ bất biến, chống giả mạo mà bất kỳ bên được ủy quyền nào cũng có thể xác minh ngay.',tc3_tag:'IOTA Rebased · TWIN',
+tc4_t:'Thông Tin Rủi Ro Hành Lang',tc4_d:'Dựa trên dữ liệu từ chối FDA, thống kê từ chối TRACES châu Âu, VeriPura chấm điểm mọi hành lang cung ứng theo hồ sơ rủi ro.',tc4_tag:'Dựa trên 65.000+ hồ sơ Cơ sở dữ liệu Từ chối FDA',
+tc5_t:'Chứng Chỉ Có Thể Xác Minh',tc5_d:'Sử dụng IOTA Identity và W3C Verifiable Credentials, VeriPura cấp chứng nhận tuân thủ đọc được bằng máy có thể chia sẻ ngay với người mua, kiểm toán viên.',tc5_tag:'W3C VCs · IOTA Identity',
+tc6_t:'API & Tích Hợp Hệ Thống',tc6_d:'VeriPura kết nối qua API với TMS, ERP hoặc hệ thống quản lý tài liệu hiện có. Thông tin tuân thủ được phủ lên quy trình hiện tại của bạn.',tc6_tag:'API · Webhook',
+exp_label:'Mở Rộng Nền Tảng',exp_s1:'Thực phẩm',exp_s2:'Vitamin & Thực phẩm bổ sung',exp_s3:'Dược phẩm',exp_s4:'Mỹ phẩm',exp_s5:'Thức ăn thú cưng',
+ch_c1_t:'Chia Sẻ Doanh Thu Mỗi Lô Hàng',ch_c1_d:'Đối tác kênh nhận phần doanh thu từ đăng ký VeriPura và doanh thu chứng nhận mỗi lô hàng cho mỗi khách hàng họ giới thiệu.',
+ch_c2_t:'Bảo Vệ Khỏi Trách Nhiệm Khách Hàng',ch_c2_d:'Khi lô hàng bị từ chối tại biên giới, nhà nhập khẩu nhìn vào đại lý của họ trước. VeriPura cung cấp hồ sơ được gắn blockchain cho mọi lần kiểm tra.',
+ch_c3_t:'Mở Rộng Dịch Vụ Của Bạn',ch_c3_d:'Xác minh tuân thủ VeriPura trở thành dịch vụ giá trị gia tăng bạn cung cấp cùng với vận chuyển. Khách hàng từ hành lang rủi ro cao cần khả năng này ngay bây giờ.',
+ch_ps1_l:'Lô hàng thực phẩm bị từ chối vào EU năm 2024',ch_ps2_l:'Tỷ lệ từ chối do lỗi tài liệu',ch_ps3_l:'Tối đa, mỗi vụ bị FDA tạm giữ',ch_ps4_l:'Trung bình xác định nguồn ô nhiễm',
+onno_title:'CEO & Đồng Sáng Lập',thomas_title:'COO & Đồng Sáng Lập',
+onno_bio:'Hơn 18 năm kinh nghiệm trong xuất nhập khẩu thực phẩm tại Đông Nam Á và châu Âu. Chuyên gia tuân thủ nhập khẩu thực phẩm EU với mạng lưới tại Hà Lan, Thụy Sĩ và Đức.',
+thomas_bio:'Doanh nhân nối tiếp và chủ sở hữu bằng sáng chế với 14 triệu euro huy động được. Người sáng lập công ty Nông nghiệp Môi trường Kiểm soát đầu tiên ở Nam Mỹ. Có trụ sở tại Ý với kinh nghiệm go-to-market B2B rộng lớn.',
+app_c1_name:'VeriPura Label',app_c1_desc:'Công cụ kiểm tra tuân thủ nhãn thực phẩm bằng AI. Tải lên bất kỳ nhãn thực phẩm nào và xác nhận ngay theo yêu cầu pháp lý cho thị trường mục tiêu của bạn.',app_c1_link:'Kiểm Tra Nhãn Thực Phẩm →',
+app_c2_name:'VeriPura Nutritional',app_c2_desc:'Phân tích và xác nhận dinh dưỡng tự động. Tính toán và xác minh thông tin dinh dưỡng cho công thức phức tạp — thay thế giấy tờ thủ công bằng hồ sơ dinh dưỡng nhanh, chính xác.',app_c2_link:'Xác Minh Công Bố Dinh Dưỡng →',
+app_c3_name:'Thêm Tính Năng Sắp Ra Mắt',app_c3_desc:'Chúng tôi liên tục xây dựng các applet mới nhắm vào điểm ma sát cao nhất trong tuân thủ nhập khẩu thực phẩm. Các mô-đun đang phát triển bao gồm trình xác nhận gói tài liệu lô hàng.',
+pilot_imp_lbl:'Vị trí nhà nhập khẩu',pilot_par_lbl:'Vị trí đối tác',
+pilot_lead:'Chúng tôi có chọn lọc. Thành viên sáng lập làm việc trực tiếp với Onno và Thomas để thực hiện thử nghiệm thực tế với lô hàng thực của họ.',
+pilot_p1:'Thử nghiệm miễn phí. Không cần cam kết để tham gia.',
+pilot_p2:'Thành viên sáng lập nhận giá ưu đãi khi chuyển đổi — không áp dụng cho khách hàng sau.',
+pilot_p3:'Bạn giúp định hình những gì VeriPura ưu tiên — hành lang, khung pháp lý và loại tài liệu quan trọng nhất.',
+pilot_p4:'Thực thi EUDR đã có hiệu lực. FSMA 204 đang áp dụng. Cửa sổ để đi trước là bây giờ.',
+pilot_cal_lbl:'Muốn nói chuyện trước?',pilot_cal_link:'Đặt lịch gọi với Onno & Thomas →',
+succ_title:'Đã nhận tin nhắn.',succ_body:'Onno hoặc Thomas sẽ liên hệ trong vòng một ngày làm việc.',
+wto_label:'THÔNG TIN PHÁP LÝ TRỰC TIẾP',chat_title:'VeriPura · Hỏi Nhà Sáng Lập',chat_sub:'Trợ lý tự động · Onno & Thomas trả lời',ask_you:'Bạn'
+},
+zh:{
+stat_l1:'的进口拒绝由<br>文件错误引起 <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(TRACES)</cite>',
+stat_l2:'最高，每次<br>FDA扣押事件 <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(FDA进口计划)</cite>',
+stat_l3:'份或更多文件用于<br>复杂的欧盟食品进口货物',
+stat_l4:'平均识别食品<br>污染源时间 <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(行业溯源研究)</cite>',
+risk_l1:'2024年欧洲食品进口拒绝次数 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(欧盟委员会TRACES)</cite>',
+risk_l2:'拒绝由文件错误引起 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(欧盟委员会TRACES)</cite>',
+risk_l3:'每次FDA扣押事件费用 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(FDA进口计划)</cite>',
+risk_l4:'平均追溯污染源时间 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(行业溯源研究)</cite>',
+cpi_title:'了解您的走廊风险',
+cpi_desc:'每个采购走廊的合规风险状况各不相同。原产地市场CPI评分与目的地市场期望之间的差距越大，您的文件风险敞口就越高。',
+cpi_recv_lbl:'目的地市场',cpi_recv_val:'英国、西欧、加拿大 &amp; 美国',cpi_recv_sub:'平均CPI 79',
+cpi_orig_lbl:'原产地走廊',cpi_orig_val:'全球南方',cpi_orig_sub:'平均CPI 35',
+cpi_gap_arrow:'← 分差 →',
+pc1_title:'每次FDA扣押事件费用',pc1_desc:'由文件错误触发的FDA自动扣押可在仓储费、重新检验费和货物损失方面造成数万美元损失，在货物到达买家之前。',
+pc2_title:'2024年欧盟食品进口拒绝次数',pc2_desc:'2024年仅动物源性食品产品的欧盟边境管控拒绝就超过14,000次。EU 2017/625和EUDR等新法规持续提高进口商必须达到的文件标准。',
+pc3_title:'FDA每票货物检查时间',pc3_desc:'FDA表示货物检验可能需要"几小时到数周"。集装箱在港口每多停一天，仓储费、腐烂风险和买家罚款就会增加。',
+pc4_title:'平均污染识别时间',pc4_desc:'发生污染时，通过分散的纸质记录识别来源平均需要14天。VeriPura不可篡改的监管链大大压缩了这一时间。',
+err_label:'VeriPura发现的最常见文件错误',
+err1_t:'机构签名不匹配',err1_d:'植物检疫或健康证书由目的地市场不认可的机构签署。',
+err2_t:'FDA Prior Notice代码错误',err2_d:'产品描述代码不正确或缺失导致FDA PREDICT自动扣押。',
+err3_t:'TRACES NT格式拒绝',err3_d:'CED格式错误或字段缺失阻止TRACES NT在到达前接受。',
+err4_t:'到达时证书过期',err4_d:'证书在签发日期有效，但在货物到达边境检查站时已过期。',
+err5_t:'机构编号不匹配',err5_d:'屠宰或加工机构编号与目的地市场批准名单不符。',
+err6_t:'缺少EUDR尽职调查记录',err6_d:'受EUDR影响商品缺少地理位置数据或无砍伐声明 — 在欧盟边境被拒绝。',
+imp_m1_l:'无溯源时识别食品污染源的平均时间',imp_m2_l:'相比全面合规审查需要数小时',imp_m3_l:'结构化工作流程，而非黑箱',imp_m4_l:'区块链锚定的防篡改审计追踪',
+imp_p1:'在出发前验证所有进口文件，而非在边境',imp_p2:'根据EU 2017/625、FDA FSMA和UK FRCR自动检查',imp_p3:'按采购走廊和产品类别实时风险评分',imp_p4:'用于审计和买家尽职调查的不可篡改合规记录',
+imp_corr_lbl:'覆盖的监管框架',imp_callout_p:'我们有意进行选择。创始参与者帮助塑造产品，免费参与试点，并在转化时获得优惠定价。',
+ff_m1_l:'单一工作流程中处理多票货物',ff_m2_l:'连接您现有系统',ff_m3_l:'自动生成客户合规报告，无需手动准备',ff_m4_l:'全天候验证，无人员瓶颈',
+ff_p1:'批量处理多票在途货物的合规检查',ff_p2:'即时标记到期日期、缺失签名、机构不匹配',ff_p3:'自动生成面向客户的合规报告',ff_p4:'与现有TMS或文件管理系统的API集成',
+ff_corr_lbl:'支持的监管框架',ff_callout_p:'创始合作伙伴帮助塑造渠道计划，免费参与试点，并在转化时获得优惠定价。',
+car_m1_l:'到港前合规审查',car_m2_l:'每次避免的扣押费用',car_m3_l:'不可篡改的监管链用于责任保护',car_m4_l:'修复指导，而非仅仅红旗',
+car_p1:'对所有食品货物清单进行到港前合规评分',car_p2:'即时识别有海关扣押风险的货物',car_p3:'不可篡改的监管链用于责任保护',car_p4:'结构化修复指导 — 不只是标记，更包括解决方案',
+car_corr_lbl:'常见进口港口',car_callout_p:'创始合作伙伴帮助塑造渠道计划，免费参与试点，并在转化时获得优惠定价。',
+tc1_t:'文件AI引擎',tc1_d:'VeriPura的文件智能层从任何格式提取和验证数据 — PDF、扫描证书、多语言文件 — 以秒计而非小时计。',tc1_tag:'多格式 · 多语言',
+tc2_t:'法规规则引擎',tc2_d:'定期维护的欧洲、美国、英国及以外食品进口要求库 — 实时检查每个文件字段。',tc2_tag:'欧洲 · FDA · 英国 · EUDR',
+tc3_t:'IOTA区块链账本',tc3_d:'每个合规裁决都锚定到IOTA Rebased区块链 — 任何授权方都可以立即验证的不可篡改记录。',tc3_tag:'IOTA Rebased · TWIN',
+tc4_t:'走廊风险情报',tc4_d:'基于FDA拒绝数据、欧洲TRACES拒绝统计和英国边境情报，VeriPura按风险状况对每个采购走廊评分。',tc4_tag:'基于65,000+条FDA拒绝数据库记录',
+tc5_t:'可验证凭证',tc5_d:'使用IOTA Identity和W3C可验证凭证，VeriPura发布可立即与买家、审计员和边境机构共享的机器可读合规证明。',tc5_tag:'W3C VCs · IOTA Identity',
+tc6_t:'API及系统集成',tc6_d:'VeriPura通过API连接您现有的TMS、ERP或文件管理系统。合规情报叠加在您当前的工作流程之上。',tc6_tag:'API · Webhook',
+exp_label:'平台扩展',exp_s1:'食品',exp_s2:'维生素与补充剂',exp_s3:'药品',exp_s4:'化妆品',exp_s5:'宠物食品',
+ch_c1_t:'每票货物收入分成',ch_c1_d:'渠道合作伙伴从其引入的每个客户的VeriPura订阅和每票货物证明收入中获得分成。',
+ch_c2_t:'保护自己免受客户责任',ch_c2_d:'当货物在边境被拒绝时，进口商首先找货代。VeriPura为每次合规检查提供有据可查的区块链证明记录。',
+ch_c3_t:'扩展您的服务范围',ch_c3_d:'VeriPura合规验证成为您在货运之外提供的增值服务。从高风险走廊采购的客户现在就需要这种能力。',
+ch_ps1_l:'2024年被拒绝进入欧盟的食品货物',ch_ps2_l:'由文件错误引起的拒绝比例',ch_ps3_l:'最高，每次FDA扣押事件',ch_ps4_l:'平均识别食品污染源时间',
+onno_title:'CEO & 联合创始人',thomas_title:'COO & 联合创始人',
+onno_bio:'在东南亚和欧洲食品出口进口合规领域拥有18年以上经验。欧盟食品进口合规专家，在荷兰、瑞士和德国拥有活跃网络。编入VeriPura合规引擎的法规知识是他的机构专业知识。',
+thomas_bio:'连续创业者和专利持有人，在之前的企业中筹集了1400万欧元。南美洲第一家受控环境农业公司创始人。常驻意大利，在创新B2B环境中拥有丰富的市场推广背景。',
+app_c1_name:'VeriPura Label',app_c1_desc:'AI驱动的食品标签合规检查器。上传任何食品标签，立即根据目标市场的法律要求进行验证 — 成分、过敏原声明、营养声明和强制性监管字段。',app_c1_link:'检查食品标签合规性 →',
+app_c2_name:'VeriPura Nutritional',app_c2_desc:'自动化营养分析和验证。为复杂配方计算和验证营养数据 — 用即时、准确的营养档案替代缓慢的手动文书工作。',app_c2_link:'验证营养声明 →',
+app_c3_name:'更多即将推出',app_c3_desc:'我们持续构建针对食品进口合规最高摩擦点的新应用程序。开发中的模块包括完整货物文件包验证和可持续发展尽职调查报告。',
+pilot_imp_lbl:'进口商名额',pilot_par_lbl:'合作伙伴名额',
+pilot_lead:'我们有意进行筛选。创始参与者直接与Onno和Thomas合作 — 而非入职团队 — 针对真实货物开展试点。',
+pilot_p1:'试点免费。参与无需任何承诺。',
+pilot_p2:'创始参与者在转化时获得优惠定价 — 后期客户不可享有。',
+pilot_p3:'您帮助塑造VeriPura的优先级 — 对您业务最重要的走廊、框架和文件类型。',
+pilot_p4:'EUDR执法已生效。FSMA 204正在实施。抢先布局的窗口就是现在。',
+pilot_cal_lbl:'想先通话？',pilot_cal_link:'与Onno & Thomas预约通话 →',
+succ_title:'消息已收到。',succ_body:'Onno或Thomas将在一个工作日内联系您。',
+wto_label:'实时法规情报',chat_title:'VeriPura · 问创始人',chat_sub:'自动助手 · Onno & Thomas 回答',ask_you:'您'
+}
+};
+// Merge new translations into window._vpT
+Object.keys(X).forEach(function(lng){
+  if(window._vpT&&window._vpT[lng])Object.assign(window._vpT[lng],X[lng]);
+});
+
+// Local t() reads current lang from html[lang] (set by applyLang before we run)
+function t2(k){
+  var lang=document.documentElement.lang||'en';
+  if(lang==='zh-Hans')lang='zh';
+  var T=window._vpT;
+  return(T&&T[lang]&&T[lang][k])||(T&&T.en&&T.en[k])||k;
+}
+
+// Custom handlers for elements without clean class-based selectors
+function applyErrLabel(){
+  var prob=document.getElementById('problem');
+  if(!prob)return;
+  var ps=prob.querySelectorAll('p[style]');
+  for(var i=0;i<ps.length;i++){
+    if(ps[i].textContent.indexOf('documentation errors')>=0||ps[i].textContent.indexOf('Most common')>=0){
+      ps[i].textContent=t2('err_label');break;
+    }
+  }
+}
+function applySuccBody(){
+  var el=document.querySelector('#pilot-form-success>div:nth-child(3)');
+  if(!el)return;
+  var anchor=el.querySelector('a');
+  el.textContent=t2('succ_body');
+  if(anchor)el.appendChild(anchor);
+}
+function applyChannelProof(){
+  var lbls=document.querySelectorAll('.channel-proof-stat .lbl');
+  ['ch_ps1_l','ch_ps2_l','ch_ps3_l','ch_ps4_l'].forEach(function(k,i){
+    if(lbls[i])lbls[i].innerHTML=t2(k);
+  });
+}
+
+// Extended MAP entries
+var extraMAP=[
+  ['.stat-item:nth-child(1) .stat-label','stat_l1',true],
+  ['.stat-item:nth-child(2) .stat-label','stat_l2',true],
+  ['.stat-item:nth-child(3) .stat-label','stat_l3',false],
+  ['.stat-item:nth-child(4) .stat-label','stat_l4',true],
+  ['.risk-stat-strip>.risk-stat:nth-child(1) .risk-stat-label','risk_l1',true],
+  ['.risk-stat-strip>.risk-stat:nth-child(3) .risk-stat-label','risk_l2',true],
+  ['.risk-stat-strip>.risk-stat:nth-child(5) .risk-stat-label','risk_l3',true],
+  ['.risk-stat-strip>.risk-stat:nth-child(7) .risk-stat-label','risk_l4',true],
+  ['.cpi-block-title','cpi_title',false],
+  ['.cpi-block-desc','cpi_desc',false],
+  ['.cpi-gap-row>.cpi-gap-side:nth-child(1) .cpi-gap-label','cpi_recv_lbl',false],
+  ['.cpi-gap-row>.cpi-gap-side:nth-child(1) .cpi-gap-value','cpi_recv_val',true],
+  ['.cpi-gap-row>.cpi-gap-side:nth-child(1) .cpi-gap-sub','cpi_recv_sub',false],
+  ['.cpi-gap-arrow','cpi_gap_arrow',false],
+  ['.cpi-gap-row>.cpi-gap-side:nth-child(3) .cpi-gap-label','cpi_orig_lbl',false],
+  ['.cpi-gap-row>.cpi-gap-side:nth-child(3) .cpi-gap-value','cpi_orig_val',false],
+  ['.cpi-gap-row>.cpi-gap-side:nth-child(3) .cpi-gap-sub','cpi_orig_sub',false],
+  ['.problem-card:nth-child(1) .problem-title','pc1_title',false],
+  ['.problem-card:nth-child(1) .problem-desc','pc1_desc',false],
+  ['.problem-card:nth-child(2) .problem-title','pc2_title',false],
+  ['.problem-card:nth-child(2) .problem-desc','pc2_desc',false],
+  ['.problem-card:nth-child(3) .problem-title','pc3_title',false],
+  ['.problem-card:nth-child(3) .problem-desc','pc3_desc',false],
+  ['.problem-card:nth-child(4) .problem-title','pc4_title',false],
+  ['.problem-card:nth-child(4) .problem-desc','pc4_desc',false],
+  ['#problem dl>div:nth-child(1) dt','err1_t',false],
+  ['#problem dl>div:nth-child(1) dd','err1_d',false],
+  ['#problem dl>div:nth-child(2) dt','err2_t',false],
+  ['#problem dl>div:nth-child(2) dd','err2_d',false],
+  ['#problem dl>div:nth-child(3) dt','err3_t',false],
+  ['#problem dl>div:nth-child(3) dd','err3_d',false],
+  ['#problem dl>div:nth-child(4) dt','err4_t',false],
+  ['#problem dl>div:nth-child(4) dd','err4_d',false],
+  ['#problem dl>div:nth-child(5) dt','err5_t',false],
+  ['#problem dl>div:nth-child(5) dd','err5_d',false],
+  ['#problem dl>div:nth-child(6) dt','err6_t',false],
+  ['#problem dl>div:nth-child(6) dd','err6_d',false],
+  ['#persona-importer .persona-metrics .metric-box:nth-child(1) .label','imp_m1_l',false],
+  ['#persona-importer .persona-metrics .metric-box:nth-child(2) .label','imp_m2_l',false],
+  ['#persona-importer .persona-metrics .metric-box:nth-child(3) .label','imp_m3_l',false],
+  ['#persona-importer .persona-metrics .metric-box:nth-child(4) .label','imp_m4_l',false],
+  ['#persona-importer .pain-list li:nth-child(1)','imp_p1',false],
+  ['#persona-importer .pain-list li:nth-child(2)','imp_p2',false],
+  ['#persona-importer .pain-list li:nth-child(3)','imp_p3',false],
+  ['#persona-importer .pain-list li:nth-child(4)','imp_p4',false],
+  ['#persona-importer .corridor-label','imp_corr_lbl',false],
+  ['#persona-forwarder .persona-metrics .metric-box:nth-child(1) .label','ff_m1_l',false],
+  ['#persona-forwarder .persona-metrics .metric-box:nth-child(2) .label','ff_m2_l',false],
+  ['#persona-forwarder .persona-metrics .metric-box:nth-child(3) .label','ff_m3_l',false],
+  ['#persona-forwarder .persona-metrics .metric-box:nth-child(4) .label','ff_m4_l',false],
+  ['#persona-forwarder .pain-list li:nth-child(1)','ff_p1',false],
+  ['#persona-forwarder .pain-list li:nth-child(2)','ff_p2',false],
+  ['#persona-forwarder .pain-list li:nth-child(3)','ff_p3',false],
+  ['#persona-forwarder .pain-list li:nth-child(4)','ff_p4',false],
+  ['#persona-forwarder .corridor-label','ff_corr_lbl',false],
+  ['#persona-carrier .persona-metrics .metric-box:nth-child(1) .label','car_m1_l',false],
+  ['#persona-carrier .persona-metrics .metric-box:nth-child(2) .label','car_m2_l',false],
+  ['#persona-carrier .persona-metrics .metric-box:nth-child(3) .label','car_m3_l',false],
+  ['#persona-carrier .persona-metrics .metric-box:nth-child(4) .label','car_m4_l',false],
+  ['#persona-carrier .pain-list li:nth-child(1)','car_p1',false],
+  ['#persona-carrier .pain-list li:nth-child(2)','car_p2',false],
+  ['#persona-carrier .pain-list li:nth-child(3)','car_p3',false],
+  ['#persona-carrier .pain-list li:nth-child(4)','car_p4',false],
+  ['#persona-carrier .corridor-label','car_corr_lbl',false],
+  ['.tech-grid .tech-card:nth-child(1) .tech-title','tc1_t',false],
+  ['.tech-grid .tech-card:nth-child(1) .tech-desc','tc1_d',false],
+  ['.tech-grid .tech-card:nth-child(1) .tech-tag','tc1_tag',false],
+  ['.tech-grid .tech-card:nth-child(2) .tech-title','tc2_t',false],
+  ['.tech-grid .tech-card:nth-child(2) .tech-desc','tc2_d',false],
+  ['.tech-grid .tech-card:nth-child(2) .tech-tag','tc2_tag',false],
+  ['.tech-grid .tech-card:nth-child(3) .tech-title','tc3_t',false],
+  ['.tech-grid .tech-card:nth-child(3) .tech-desc','tc3_d',false],
+  ['.tech-grid .tech-card:nth-child(3) .tech-tag','tc3_tag',false],
+  ['.tech-grid .tech-card:nth-child(4) .tech-title','tc4_t',false],
+  ['.tech-grid .tech-card:nth-child(4) .tech-desc','tc4_d',false],
+  ['.tech-grid .tech-card:nth-child(4) .tech-tag','tc4_tag',false],
+  ['.tech-grid .tech-card:nth-child(5) .tech-title','tc5_t',false],
+  ['.tech-grid .tech-card:nth-child(5) .tech-desc','tc5_d',false],
+  ['.tech-grid .tech-card:nth-child(5) .tech-tag','tc5_tag',false],
+  ['.tech-grid .tech-card:nth-child(6) .tech-title','tc6_t',false],
+  ['.tech-grid .tech-card:nth-child(6) .tech-desc','tc6_d',false],
+  ['.tech-grid .tech-card:nth-child(6) .tech-tag','tc6_tag',false],
+  ['.expansion-label','exp_label',false],
+  ['.expansion-steps>.expansion-step:nth-child(1)','exp_s1',false],
+  ['.expansion-steps>.expansion-step:nth-child(3)','exp_s2',false],
+  ['.expansion-steps>.expansion-step:nth-child(5)','exp_s3',false],
+  ['.expansion-steps>.expansion-step:nth-child(7)','exp_s4',false],
+  ['.expansion-steps>.expansion-step:nth-child(9)','exp_s5',false],
+  ['.channel-grid .channel-card:nth-child(1) .channel-card-title','ch_c1_t',false],
+  ['.channel-grid .channel-card:nth-child(1) .channel-card-desc','ch_c1_d',false],
+  ['.channel-grid .channel-card:nth-child(2) .channel-card-title','ch_c2_t',false],
+  ['.channel-grid .channel-card:nth-child(2) .channel-card-desc','ch_c2_d',false],
+  ['.channel-grid .channel-card:nth-child(3) .channel-card-title','ch_c3_t',false],
+  ['.channel-grid .channel-card:nth-child(3) .channel-card-desc','ch_c3_d',false],
+  ['.team-card:nth-child(1) .team-title','onno_title',false],
+  ['.team-card:nth-child(1) .team-bio','onno_bio',false],
+  ['.team-card:nth-child(2) .team-title','thomas_title',false],
+  ['.team-card:nth-child(2) .team-bio','thomas_bio',false],
+  ['.applets-grid .applet-card:nth-child(1) .applet-name','app_c1_name',false],
+  ['.applets-grid .applet-card:nth-child(1) .applet-desc','app_c1_desc',false],
+  ['.applets-grid .applet-card:nth-child(1) .applet-link.primary','app_c1_link',false],
+  ['.applets-grid .applet-card:nth-child(2) .applet-name','app_c2_name',false],
+  ['.applets-grid .applet-card:nth-child(2) .applet-desc','app_c2_desc',false],
+  ['.applets-grid .applet-card:nth-child(2) .applet-link.primary','app_c2_link',false],
+  ['.applets-grid .applet-card:nth-child(3) .applet-name','app_c3_name',false],
+  ['.applets-grid .applet-card:nth-child(3) .applet-desc','app_c3_desc',false],
+  ['.ask-chat-title','chat_title',false],
+  ['.ask-chat-sub','chat_sub',false],
+  ['.pilot-slot-item:nth-child(1) .pilot-slot-label','pilot_imp_lbl',false],
+  ['.pilot-slot-item:nth-child(3) .pilot-slot-label','pilot_par_lbl',false],
+  ['.pilot-pitch-lead','pilot_lead',false],
+  ['.pilot-pitch-point:nth-child(1)>span:last-child','pilot_p1',false],
+  ['.pilot-pitch-point:nth-child(2)>span:last-child','pilot_p2',false],
+  ['.pilot-pitch-point:nth-child(3)>span:last-child','pilot_p3',false],
+  ['.pilot-pitch-point:nth-child(4)>span:last-child','pilot_p4',false],
+  ['.pilot-pitch-cal-label','pilot_cal_lbl',false],
+  ['.pilot-pitch-cal-link','pilot_cal_link',false],
+  ['#pilot-form-success>div:nth-child(2)','succ_title',false]
+];
+
+// Push extra MAP entries (mutates the same array applyLang iterates)
+if(window._vpMAP){window._vpMAP.push.apply(window._vpMAP,extraMAP);}
+
+// Wrap setLang so custom handlers also fire on every language switch
+if(window.setLang){
+  var _origSetLang=window.setLang;
+  window.setLang=function(lng,btn){
+    _origSetLang(lng,btn);
+    applyErrLabel();
+    applySuccBody();
+    applyChannelProof();
+  };
+}
+
+// Run custom handlers after the main DOMContentLoaded has applied the saved language
+document.addEventListener('DOMContentLoaded',function(){
+  applyErrLabel();
+  applySuccBody();
+  applyChannelProof();
+});
+})();
+</script>
 </body>
 </html>
