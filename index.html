@@ -3449,7 +3449,7 @@ function applyLang(){
   document.documentElement.lang=langMap[_lang]||'en';
 }
 
-function setLang(lng,btn){
+window.setLang=function setLang(lng,btn){
   _lang=lng;
   document.getElementById('lang-btn').textContent=lng.toUpperCase();
   document.querySelectorAll('.lang-opt').forEach(function(b){
@@ -3460,7 +3460,7 @@ function setLang(lng,btn){
   try{localStorage.setItem('vp_lang',lng);}catch(e){}
 }
 
-function toggleLangMenu(){
+window.toggleLangMenu=function toggleLangMenu(){
   document.getElementById('lang-menu').classList.toggle('open');
 }
 
