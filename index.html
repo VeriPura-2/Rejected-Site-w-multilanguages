@@ -16,6 +16,14 @@
 <meta name="author" content="Onno Stienen, Thomas Oberlin">
 <meta name="theme-color" content="#0F2444">
 <link rel="canonical" href="https://veripura.com/">
+<link rel="alternate" hreflang="x-default" href="https://veripura.com/">
+<link rel="alternate" hreflang="en"      href="https://veripura.com/">
+<link rel="alternate" hreflang="th"      href="https://veripura.com/">
+<link rel="alternate" hreflang="vi"      href="https://veripura.com/">
+<link rel="alternate" hreflang="zh-Hans" href="https://veripura.com/">
+<link rel="alternate" hreflang="pt"      href="https://veripura.com/">
+<link rel="alternate" hreflang="ar"      href="https://veripura.com/">
+<link rel="alternate" hreflang="es"      href="https://veripura.com/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VeriPura">
@@ -31,6 +39,8 @@
 <meta property="og:locale:alternate" content="vi_VN">
 <meta property="og:locale:alternate" content="zh_CN">
 <meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ar_SA">
+<meta property="og:locale:alternate" content="es_ES">
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
@@ -48,7 +58,7 @@
   "name": "VeriPura",
   "url": "https://veripura.com/",
   "description": "Pre-shipment food import compliance verification for food importers, freight forwarders, carriers, and customs brokers.",
-  "inLanguage": ["en", "th", "vi", "zh", "pt"],
+  "inLanguage": ["en", "th", "vi", "zh", "pt", "ar", "es"],
   "publisher": {
     "@id": "https://veripura.com/#organization"
   }
@@ -72,7 +82,7 @@
     "@type": "ContactPoint",
     "contactType": "customer support",
     "url": "https://veripura.com/#contact",
-    "availableLanguage": ["English", "Thai", "Vietnamese", "Chinese", "Portuguese"]
+    "availableLanguage": ["English", "Thai", "Vietnamese", "Chinese", "Portuguese", "Arabic", "Spanish"]
   },
   "areaServed": ["Europe", "United States", "United Kingdom", "Thailand", "Vietnam", "China", "Brazil", "India", "Indonesia", "Malaysia"],
   "sameAs": [
@@ -84,7 +94,8 @@
   "founders": [
     { "@id": "https://veripura.com/#onno-stienen" },
     { "@id": "https://veripura.com/#thomas-oberlin" }
-  ]
+  ],
+  "knowsLanguage": ["en", "th", "vi", "zh", "pt", "ar", "es"]
 }
 </script>
 
@@ -149,7 +160,7 @@
   },
   "description": "Pre-shipment food import compliance documentation verification. VeriPura validates documentation against EU Regulation 2017/625, FDA FSMA, EUDR, FSMA 204, TRACES NT, and UK FRCR requirements before a container moves — eliminating detentions, rejections, and manual compliance failures.",
   "serviceType": "Food Import Compliance Verification",
-  "areaServed": ["Europe", "United States", "United Kingdom"],
+  "areaServed": ["Europe", "United States", "United Kingdom", "Thailand", "Vietnam", "China", "Brazil", "Saudi Arabia", "United Arab Emirates", "Spain", "Mexico", "Colombia"],
   "audience": {
     "@type": "Audience",
     "name": "Food importers, freight forwarders, carriers, and customs brokers",
@@ -165,7 +176,7 @@
   "availableChannel": {
     "@type": "ServiceChannel",
     "serviceUrl": "https://veripura.com/",
-    "availableLanguage": ["English", "Thai", "Vietnamese", "Chinese", "Portuguese"]
+    "availableLanguage": ["English", "Thai", "Vietnamese", "Chinese", "Portuguese", "Arabic", "Spanish"]
   }
 }
 </script>
@@ -321,7 +332,7 @@
     "@id": "https://veripura.com/#service"
   },
   "description": "Pre-shipment food import compliance verification for food importers, freight forwarders, carriers, and customs brokers. Covers EU 2017/625, FDA FSMA, EUDR, FSMA 204, TRACES NT, and UK FRCR.",
-  "inLanguage": ["en", "th", "vi", "zh", "pt"],
+  "inLanguage": ["en", "th", "vi", "zh", "pt", "ar", "es"],
   "dateModified": "2026-05-25",
   "primaryImageOfPage": {
     "@type": "ImageObject",
@@ -350,6 +361,29 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://veripura.com/#workflow",
+  "name": "How VeriPura Verifies Food Import Compliance",
+  "description": "VeriPura processes every food import shipment through a 9-stage AI compliance workflow — from document upload to blockchain-anchored compliance record — before the container departs.",
+  "totalTime": "PT4H",
+  "estimatedCost": { "@type": "MonetaryAmount", "currency": "EUR", "value": "0", "description": "Free for founding pilot participants" },
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Intake", "text": "Upload your import document bundle via the VeriPura portal or API — phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, and regulatory declarations." },
+    { "@type": "HowToStep", "position": 2, "name": "Mapping", "text": "VeriPura identifies the HS code for your commodity and the trade corridor — origin country, destination market, and the applicable regulatory regime (EU, US, or UK)." },
+    { "@type": "HowToStep", "position": 3, "name": "Parse", "text": "AI field extraction reads every document field using OCR and language models — extracting structured data from phytosanitary certificates, health certificates, and regulatory declarations in any language." },
+    { "@type": "HowToStep", "position": 4, "name": "Trace", "text": "Supply chain linkage connects producer, processor, and shipment entities — validating establishment numbers against FDA and EU approved lists and checking EUDR due diligence chains." },
+    { "@type": "HowToStep", "position": 5, "name": "Comply", "text": "Over 2,000 validation rules check every extracted field against EU Regulation 2017/625, FDA FSMA, EUDR, FSMA 204, TRACES NT, and UK FRCR requirements." },
+    { "@type": "HowToStep", "position": 6, "name": "Shield", "text": "Risk scoring assesses corridor risk, document completeness, and certificate expiry — generating alerts for every issue that requires correction before the container departs." },
+    { "@type": "HowToStep", "position": 7, "name": "Auditor", "text": "A complete audit trail is generated, documenting every check, every rule applied, and every field validated — forming the shipment compliance dossier." },
+    { "@type": "HowToStep", "position": 8, "name": "Verdict", "text": "VeriPura delivers a clear compliance verdict — Pass, Fail, or Fix — with specific remediation guidance for every flagged issue, before the container moves." },
+    { "@type": "HowToStep", "position": 9, "name": "Ledger", "text": "The compliance record is anchored to the IOTA blockchain, creating an immutable, tamperproof attestation that protects importers, forwarders, and carriers in border disputes." }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "@id": "https://veripura.com/#app-label",
   "name": "VeriPura Label",
@@ -371,7 +405,7 @@
     "Flags missing mandatory fields by target market",
     "Prevents costly recalls from labelling errors"
   ],
-  "availableLanguage": ["English", "Thai", "Vietnamese", "Chinese", "Portuguese"],
+  "availableLanguage": ["English", "Thai", "Vietnamese", "Chinese", "Portuguese", "Arabic", "Spanish"],
   "isPartOf": { "@id": "https://veripura.com/#service" }
 }
 </script>
@@ -400,7 +434,7 @@
     "Verifies declared values against calculated actuals",
     "Outputs market-ready nutritional declarations"
   ],
-  "availableLanguage": ["English", "Thai", "Vietnamese", "Chinese", "Portuguese"],
+  "availableLanguage": ["English", "Thai", "Vietnamese", "Chinese", "Portuguese", "Arabic", "Spanish"],
   "isPartOf": { "@id": "https://veripura.com/#service" }
 }
 </script>
@@ -1206,6 +1240,8 @@
       <li><button class="lang-opt" data-lang="vi" onclick="setLang('vi',this)">VI&nbsp; Tiếng Việt</button></li>
       <li><button class="lang-opt" data-lang="zh" onclick="setLang('zh',this)">ZH&nbsp; 中文</button></li>
       <li><button class="lang-opt" data-lang="pt" onclick="setLang('pt',this)">PT&nbsp; Português</button></li>
+      <li><button class="lang-opt" data-lang="ar" onclick="setLang('ar',this)">AR&nbsp; العربية</button></li>
+      <li><button class="lang-opt" data-lang="es" onclick="setLang('es',this)">ES&nbsp; Español</button></li>
     </ul>
   </div>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
@@ -1546,7 +1582,7 @@ var FEEDS = [
     <div style="margin-top: 28px; background: var(--navy); border-radius: 8px; padding: 20px 32px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
       <div style="font-family: var(--font-serif); font-size: 2rem; color: var(--gold); flex-shrink: 0; line-height: 1;">50+</div>
       <div style="width: 1px; height: 36px; background: rgba(212,168,71,0.3); flex-shrink: 0;"></div>
-      <div style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--sky); line-height: 1.6; max-width: 680px;">Specialised agents working in combination — each trained on the specific regulatory requirements of different food types, certification regimes, and sourcing corridors.</div>
+      <div id="agents-desc" style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--sky); line-height: 1.6; max-width: 680px;">Specialised agents working in combination — each trained on the specific regulatory requirements of different food types, certification regimes, and sourcing corridors.</div>
     </div>
 
 
@@ -3428,6 +3464,88 @@ con_eyebrow:"Solicite uma Vaga no Piloto",con_h2:"Junte-se ao programa<br>piloto
 lbl_first:"Nome",lbl_last:"Sobrenome",lbl_company:"Empresa",lbl_role:"Cargo",lbl_email:"E-mail",lbl_whatsapp:"WhatsApp ou Line <span style=\"font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted);\">(opcional)</span>",lbl_msg:"Mensagem",btn_send:"Enviar Mensagem",
 ph_first:"João",ph_last:"Silva",ph_company:"Nome da sua empresa",ph_msg:"Conte-nos sobre seu processo de conformidade atual e os corredores com os quais você trabalha...",
 footer_copy:"VeriPura © 2026"
+},
+ar:{
+nav_risks:"المخاطر",nav_workflow:"آلية العمل",nav_whom:"لمن",nav_technology:"التكنولوجيا",nav_tools:"جرب أدواتنا",nav_partners:"الشركاء",nav_team:"الفريق",nav_cta:"قدّم طلبك للتجربة",nav_m_whom:"المستوردون والوكلاء",nav_m_partners:"برنامج الشراكة",
+hero_eyebrow:"نختار الآن المشاركين في التجربة التأسيسية — أماكن محدودة",
+hero_h1:"الامتثال الجمركي<br>لا ينبغي أن يكلّفك<br><em>شحنة كاملة.</em>",
+hero_kicker:"التحقق من امتثال وثائق استيراد الغذاء قبل الشحن — للمستوردين ووكلاء الشحن والناقلين — مع التحقق من الوثائق وفق FDA FSMA وEUDR وFSMA 204 وEU 2017/625 قبل تحرك الحاوية.",
+hero_sub:"تساعد VeriPura مستوردي الغذاء ووكلاء الشحن والناقلين على التحقق من وثائق الامتثال قبل تحرك أي حاوية — للحد من الرفض والاحتجاز والفوضى الوثائقية.",
+hero_cta1:"قدّم طلبك للتجربة",hero_cta2:"شاهد آلية العمل",
+prob_eyebrow:"المخاطر",prob_h2:"خطأ في حقل واحد.<br>شحنة غذاء مرفوضة.",
+prob_lead:"يمكن تفادي الرفض على الحدود واحتجاز FDA — إذا اكتشفت أخطاء الوثائق قبل تحرك الشحنة لا عند الحدود. تُقاس تكلفة الاكتشاف المتأخر بالحاويات المحتجزة والغرامات التنظيمية وعلاقات المشترين الضائعة.",
+wf_eyebrow:"آلية العمل",wf_h2:"تسع مراحل.<br>فحص امتثال واحد معتمد.",
+wf_lead:"تتحقق VeriPura من الوثائق التي يرسلها موردوك وفق متطلبات السوق المستهدف — قبل تحرك أي حاوية.",
+ws0_name:"الاستقبال",ws0_sub:"رفع الملفات عبر البوابة أو API",ws1_name:"التعيين",ws1_sub:"كود HS وتحديد الممر",ws2_name:"التحليل",ws2_sub:"استخراج الحقول بالذكاء الاصطناعي",ws3_name:"التتبع",ws3_sub:"ربط سلسلة التوريد",ws4_name:"الامتثال",ws4_sub:"فحص قواعد EU / FDA",ws5_name:"الحماية",ws5_sub:"تسجيل المخاطر والتنبيهات",ws6_name:"المراجعة",ws6_sub:"سجل تدقيق شامل",ws7_name:"الحكم",ws7_sub:"نجح / فشل + إصلاح",ws8_name:"السجل",ws8_sub:"تثبيت بلوكشين IOTA",
+per_eyebrow:"لمن هذا",per_h2:"مصمَّم للمهنيين<br>الذين ينقلون الغذاء عبر الحدود.",
+tab_importers:"مستوردو الغذاء",tab_forwarders:"وكلاء الشحن",tab_carriers:"الناقلون والوسطاء الجمركيون",
+imp_role:"مستورد غذاء في الاتحاد الأوروبي والولايات المتحدة",imp_h3:"توقف عن خسارة الشحنات بسبب أخطاء وثائقية لم تكن تعلم بوجودها.",
+imp_body:"أنت تستورد من ممرات عالية المخاطر — تايلاند والبرازيل ونيجيريا والصين والهند والمكسيك وغيرها — حيث تكون ملفات الامتثال معقدة والوثائق بلغات متعددة. خطأ واحد في شهادة صحية يعني احتجاز حاويتك على الحدود بينما تشاهد هامشك يتلاشى.",
+imp_slots:"أماكن محدودة — قدّم طلبك الآن",imp_cta:"قدّم طلبك للحصول على مكان تجريبي للمستوردين ←",
+ff_role:"وكيل شحن",ff_h3:"التحقق من وثائق الامتثال لوكلاء الشحن — عبر جميع الشحنات النشطة، قبل تحرك أي حاوية.",
+ff_body:"بصفتك وكيل شحن، تدير وثائق عشرات الشحنات في وقت واحد عبر أصول ومنتجات وأنظمة تنظيمية متعددة. إخفاق الامتثال ليس مشكلة عميلك فحسب — بل يطال سمعتك وتجديد عقودك.",
+ff_slots:"أماكن محدودة — قدّم طلبك الآن",ff_cta:"قدّم طلبك للحصول على مكان شراكة لوكلاء الشحن ←",
+car_role:"ناقل ووسيط جمركي",car_h3:"قلّل تأخيرات الموانئ وحافظ على معدل إنجازك بمعلومات الامتثال السابقة للوصول.",
+car_body:"تأخيرات الموانئ وعمليات الإيقاف الجمركي تفرض تكاليف متراكمة. تكشف VeriPura عن مشكلات الامتثال قبل مغادرة السفينة — مما يمنحك الوقت لإصلاحها قبل أن تكون الشحنة في عرض البحر.",
+car_slots:"أماكن محدودة — قدّم طلبك الآن",car_cta:"قدّم طلبك للحصول على مكان شراكة للناقلين ←",
+tech_eyebrow:"التكنولوجيا",tech_h2:"معلومات امتثال استيراد الغذاء<br>مثبّتة على البلوكشين.",tech_lead:"تجمع VeriPura بين الذكاء الاصطناعي للوثائق ومحركات القواعد التنظيمية وبلوكشين IOTA لإنشاء سجل امتثال سريع ومتسق وآمن من التلاعب.",
+ch_eyebrow:"كن شريكًا",ch_h2:"برنامج شراكة الامتثال لاستيراد الغذاء<br>المصمَّم لوكلاء الشحن والناقلين.",
+ch_lead:"يُقدّم وكلاء الشحن والناقلون الذين يضيفون التحقق من الامتثال عبر VeriPura لعملاء مستوردي الغذاء فحصًا وثائقيًا قبل الشحن — للحد من الاحتجازات الجمركية والرفض على الحدود.",
+ch_cta1:"اطّلع على برنامج شراكة VeriPura لوكلاء الشحن ←",ch_cta2:"قدّم طلبك للحصول على مكان شراكة ←",
+ask_eyebrow:"اسألنا أي شيء",ask_h2:"هل لديك سؤال حول امتثال استيراد الغذاء؟",ask_lead:"لست متأكدًا إذا كانت VeriPura مناسبة لك؟ اسأل Onno وThomas مباشرةً.",ask_placeholder:"اكتب سؤالك…",
+team_eyebrow:"الفريق",team_h2:"أسّسه مشغّلون<br>عاشوا المشكلة.",team_lead:"بنت VeriPura رواد أعمال لديهم تجربة مباشرة في تصنيع الغذاء وسلاسل التوريد والتكنولوجيا — لا مستشارون قرأوا عنها.",
+faq_eyebrow:"الأسئلة الشائعة",faq_h2:"أسئلة شائعة حول التحقق من الامتثال لاستيراد الغذاء.",faq_lead:"أسئلة من مستوردي الغذاء ووكلاء الشحن والناقلين والوسطاء الجمركيين.",
+app_eyebrow:"أدوات المعلومات الحية",app_h2:"شاهد ما تراه VeriPura —<br>الآن.",
+cta_eyebrow:"ابدأ الآن",cta_h2:"أهم ما نستورده<br>هو <em>الثقة.</em>",cta_body:"إذا كنت تنقل الغذاء من ممرات عالية المخاطر وتدير إشعارات TRACES NT وتقديمات FDA Prior Notice ووثائق EUDR وسجلات تتبع FSMA 204 — فهذه التجربة مصمَّمة لك.",cta_btn1:"قدّم طلبك للتجربة",cta_btn2:"شاهد آلية العمل",
+con_eyebrow:"قدّم طلبك للتجربة",con_h2:"انضم إلى برنامج<br>التجربة التأسيسية.",
+lbl_first:"الاسم الأول",lbl_last:"اسم العائلة",lbl_company:"الشركة",lbl_role:"المسمى الوظيفي",lbl_email:"البريد الإلكتروني",lbl_whatsapp:'واتساب أو لاين <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted);">(اختياري)</span>',lbl_msg:"الرسالة",btn_send:"إرسال الرسالة",
+ph_first:"محمد",ph_last:"الأحمد",ph_company:"اسم شركتك",ph_msg:"أخبرنا عن عملية الامتثال الحالية لديك والممرات التي تعمل بها...",
+footer_copy:"VeriPura © 2026"
+},
+es:{
+nav_risks:"Riesgos",nav_workflow:"Flujo de Trabajo",nav_whom:"Para Quién",nav_technology:"Tecnología",nav_tools:"Prueba Nuestras Herramientas",nav_partners:"Socios",nav_team:"Equipo",nav_cta:"Solicitar Plaza Piloto",nav_m_whom:"Importadores y Transitarios",nav_m_partners:"Programa de Socios",
+hero_eyebrow:"Seleccionando participantes del piloto fundacional — plazas limitadas",
+hero_h1:"El cumplimiento aduanero<br>no debería costarte<br><em>un cargamento entero.</em>",
+hero_kicker:"VeriPura verifica cada documento de importación de alimentos antes de que zarpe el contenedor — y señala los problemas cuando aún son corregibles.",
+hero_sub:"El 39 % de los rechazos de importación de alimentos en la UE se deben a fallos documentales. Una retención de la FDA puede costar hasta 50.000 $. VeriPura comprueba cada campo contra los requisitos de frontera de la UE, EE. UU. y Reino Unido antes de la salida, usando un flujo de trabajo de IA de 9 etapas.",
+hero_cta1:"Solicitar Plaza Piloto",hero_cta2:"Ver Cómo Funciona",
+prob_eyebrow:"El Coste Real del Incumplimiento",
+prob_h2:"Los errores documentales destruyen los márgenes",
+prob_lead:"El 39 % de los rechazos de importación de alimentos en la UE son fallos documentales, no de seguridad (Comisión Europea TRACES). Una sola retención de la FDA puede costar entre 30.000 y 50.000 $ en almacenamiento, honorarios legales y destrucción del producto. El mismo error corregido antes de la salida cuesta solo un documento revisado.",
+wf_eyebrow:"Flujo de Trabajo de Cumplimiento",
+wf_h2:"Nueve etapas. Cero sorpresas en la frontera.",
+wf_lead:"Cada envío pasa por el mismo flujo de trabajo estructurado de IA: desde la carga de documentos hasta el anclaje en blockchain, con un veredicto de cumplimiento claro antes de que zarpe el contenedor.",
+ws0_name:"Recepción",ws0_sub:"Carga de archivos vía portal o API",ws1_name:"Mapeo",ws1_sub:"Código HS e identificación de corredor",ws2_name:"Análisis",ws2_sub:"Extracción de campos con IA",ws3_name:"Rastreo",ws3_sub:"Vinculación de cadena de suministro",ws4_name:"Cumplimiento",ws4_sub:"Verificación de reglas UE / FDA",ws5_name:"Protección",ws5_sub:"Puntuación de riesgo y alertas",ws6_name:"Auditoría",ws6_sub:"Pista de auditoría completa",ws7_name:"Veredicto",ws7_sub:"Aprobado / rechazado + corrección",ws8_name:"Registro",ws8_sub:"Anclaje en blockchain IOTA",
+per_eyebrow:"Para Quién Es",per_h2:"Diseñado para los profesionales<br>que mueven alimentos a través de fronteras.",
+tab_importers:"Importadores",tab_forwarders:"Transitarios",tab_carriers:"Transportistas",
+imp_role:"Importador de Alimentos",
+imp_h3:"Deja de descubrir los problemas en la frontera",
+imp_body:"Sube tus documentos de importación. VeriPura verifica cada campo contra los requisitos de la UE, EE. UU. y Reino Unido — fitosanitarios, sanitarios, origen, TRACES NT — antes de que zarpe el contenedor. Los errores se detectan cuando aún son corregibles, no cuando el barco ya está en alta mar.",
+imp_slots:"Plazas limitadas — solicita ahora",imp_cta:"Solicitar como Importador",
+ff_role:"Transitario",
+ff_h3:"Convierte el cumplimiento en una ventaja competitiva",
+ff_body:"Verifica los documentos de tus clientes antes de la carga. Señala las discrepancias antes de que la retención de la FDA o el rechazo en frontera afecten a tu reputación. Cada verificación genera un registro certificado en blockchain que te protege en disputas con clientes.",
+ff_slots:"Plazas de socio disponibles",ff_cta:"Unirse al Programa de Socios",
+car_role:"Transportista / Agente de Aduanas",
+car_h3:"Reduce las retenciones en puerto antes de zarpar",
+car_body:"Los retrasos en puerto cuestan tiempo y dinero. VeriPura verifica el paquete documental contra los requisitos del puerto de destino antes de que zarpe el buque — con un registro de auditoría certificado en blockchain para cada comprobación.",
+car_slots:"Abierto a nuevos socios de canal",car_cta:"Explorar la Asociación",
+tech_eyebrow:"Motor de Cumplimiento de IA",tech_h2:"Construido sobre cumplimiento regulatorio real",tech_lead:"VeriPura combina IA documental, motores de reglas regulatorias y blockchain IOTA para crear un registro de cumplimiento rápido, consistente y resistente a manipulaciones.",
+ch_eyebrow:"Conviértete en Socio",ch_h2:"El programa de socios de cumplimiento para importación de alimentos<br>diseñado para transitarios y transportistas.",
+ch_lead:"Los transitarios y transportistas que añaden la verificación de cumplimiento de VeriPura a su oferta de servicios dan a sus clientes importadores de alimentos una validación documental previa al embarque — reduciendo retenciones aduaneras y rechazos en frontera antes de que el contenedor se mueva.",
+ch_cta1:"Ver el Programa de Socios VeriPura para Transitarios →",ch_cta2:"Solicitar una Plaza de Socio →",
+ask_eyebrow:"Pregúntanos Cualquier Cosa",ask_h2:"¿Tienes una pregunta sobre el cumplimiento en importación de alimentos?",ask_lead:"¿No estás seguro si VeriPura es para ti? Pregunta directamente a Onno y Thomas.",ask_placeholder:"Escribe tu pregunta…",
+team_eyebrow:"El Equipo",team_h2:"Fundado por operadores<br>que han vivido el problema.",team_lead:"VeriPura fue construida por emprendedores con experiencia directa en procesamiento de alimentos, cadena de suministro y tecnología — no por consultores que leyeron sobre ello.",
+faq_eyebrow:"Preguntas Frecuentes",faq_h2:"Todo lo que necesitas saber",
+faq_lead:"Si tu pregunta no está aquí, envíala a través del formulario de contacto y te responderemos en un día hábil.",
+app_eyebrow:"Herramientas en Vivo",app_h2:"Prueba el motor antes de comprometerte",
+cta_eyebrow:"Piloto Fundacional",cta_h2:"Únete al piloto fundacional",
+cta_body:"Estamos seleccionando un grupo reducido de importadores de alimentos, transitarios y transportistas para el piloto fundacional. Los participantes obtienen acceso temprano, precios fijos de por vida y una influencia directa sobre lo que construimos a continuación.",
+cta_btn1:"Solicitar una Plaza Piloto",cta_btn2:"Ver Cómo Funciona",
+con_eyebrow:"Empieza Aquí",con_h2:"Solicita tu plaza piloto",
+lbl_first:"Nombre",lbl_last:"Apellido",lbl_company:"Empresa",lbl_role:"Cargo",lbl_email:"Correo electrónico",lbl_whatsapp:"WhatsApp o Line <span style=\"font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted);\">(opcional)</span>",lbl_msg:"Mensaje",btn_send:"Enviar Solicitud",
+ph_first:"María",ph_last:"García",ph_company:"Nombre de tu empresa",ph_msg:"Cuéntanos sobre tu proceso de importación y los corredores con los que trabajas...",
+footer_copy:"VeriPura © 2026"
 }
 };
 
@@ -3568,8 +3686,39 @@ function applyLang(){
     else{ey.insertAdjacentText('beforeend',t('hero_eyebrow'));}
   }
   // Update html lang attribute
-  var langMap={en:'en',th:'th',vi:'vi',zh:'zh-Hans',pt:'pt'};
+  var langMap={en:'en',th:'th',vi:'vi',zh:'zh-Hans',pt:'pt',ar:'ar',es:'es'};
+  document.documentElement.dir=(['ar'].indexOf(_lang)>-1)?'rtl':'ltr';
   document.documentElement.lang=langMap[_lang]||'en';
+  // SEO/GEO: update page-level meta per active language
+  var _pt={
+    en:'VeriPura — Pre-Shipment Food Import Compliance Verification',
+    th:'VeriPura — การตรวจสอบความสอดคล้องในการนำเข้าอาหารก่อนการขนส่ง',
+    vi:'VeriPura — X\xe1c Minh Tu\xe2n Thủ Nhập Khẩu Thực Phẩm Trước Khi Vận Chuyển',
+    zh:'VeriPura — 预装运食品进口合规验证',
+    pt:'VeriPura — Verifica\xe7\xe3o de Conformidade para Importa\xe7\xe3o de Alimentos P\xedr-Embarque',
+    ar:'VeriPura — التحقق من امتثال استيراد الغذاء قبل الشحن',
+    es:'VeriPura — Verificaci\xf3n de Cumplimiento en Importaci\xf3n de Alimentos Antes del Embarque'
+  };
+  var _pd={
+    en:'Pre-shipment food import compliance verification. VeriPura checks every document field against FDA FSMA, EUDR, and EU 2017/625 before your cargo moves.',
+    th:'บริการตรวจสอบความสอดคล้องการนำเข้าอาหารก่อนการขนส่ง VeriPura ตรวจสอบทุกช่องเอกสารตาม FDA FSMA, EUDR และ EU 2017/625 ก่อนที่สินค้าของคุณจะเคลื่อนออก',
+    vi:'X\xe1c minh tu\xe2n thủ nhập khẩu thực phẩm trước khi vận chuyển. VeriPura kiểm tra từng trường t\xe0i liệu theo FDA FSMA, EUDR v\xe0 EU 2017/625 trước khi h\xe0ng h\xf3a di chuyển.',
+    zh:'预装运食品进口合规验证服务。VeriPura在货物移动前，根据FDA FSMA、EUDR和EU 2017/625核查每个文件字段。',
+    pt:'Verifica\xe7\xe3o de conformidade para importa\xe7\xe3o de alimentos p\xedr-embarque. VeriPura verifica cada campo de documento contra FDA FSMA, EUDR e EU 2017/625 antes do seu carregamento se mover.',
+    ar:'التحقق من امتثال استيراد الغذاء قبل الشحن. تتحقق VeriPura من كل حقل وثيقة وفق FDA FSMA وEUDR وEU 2017/625 قبل تحرك بضائعك.',
+    es:'Verificaci\xf3n de cumplimiento para importaci\xf3n de alimentos antes del embarque. VeriPura comprueba cada campo de documento contra FDA FSMA, EUDR y EU 2017/625 antes de que tu carga se mueva.'
+  };
+  var _ol={en:'en_GB',th:'th_TH',vi:'vi_VN',zh:'zh_CN',pt:'pt_BR',ar:'ar_SA',es:'es_ES'};
+  var _tv=_pt[_lang]||_pt.en, _dv=_pd[_lang]||_pd.en;
+  document.title=_tv;
+  var _qs=function(s){return document.querySelector(s);};
+  var _sc=function(el,v){if(el)el.setAttribute('content',v);};
+  _sc(_qs('meta[name="description"]'),_dv);
+  _sc(_qs('meta[property="og:title"]'),_tv);
+  _sc(_qs('meta[property="og:description"]'),_dv);
+  _sc(_qs('meta[property="og:locale"]'),_ol[_lang]||'en_GB');
+  _sc(_qs('meta[name="twitter:title"]'),_tv);
+  _sc(_qs('meta[name="twitter:description"]'),_dv);
 }
 
 window.setLang=function setLang(lng,btn){
@@ -3611,6 +3760,7 @@ stat_l1:'of import refusals are<br>documentation failures <cite style="font-size
 stat_l2:'up to, per single<br>FDA detention event <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(FDA Import Program)</cite>',
 stat_l3:'documents or more required for a<br>complex EU food import shipment',
 stat_l4:'avg. to identify source of<br>food contamination <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(industry traceability studies)</cite>',
+agents_desc:'Specialised agents working in combination — each trained on the specific regulatory requirements of different food types, certification regimes, and sourcing corridors.',
 risk_l1:'European food import refusals in 2024 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite>',
 risk_l2:'of refusals are documentation failures <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite>',
 risk_l3:'per FDA detention incident <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(FDA Import Program)</cite>',
@@ -3672,6 +3822,7 @@ stat_l1:'ของการปฏิเสธนำเข้า<br>เกิด�
 stat_l2:'สูงสุด ต่อเหตุการณ์<br>กักตั้งของ FDA ครั้งเดียว <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(FDA Import Program)</cite>',
 stat_l3:'เอกสารหรือมากกว่าที่ต้องใช้<br>สำหรับการนำเข้าอาหาร EU ที่ซับซ้อน',
 stat_l4:'เฉลี่ยในการระบุแหล่งที่มา<br>ของการปนเปื้อนอาหาร <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(การศึกษาการตรวจสอบย้อนกลับ)</cite>',
+agents_desc:'เอเจนต์เฉพาะทางที่ทำงานร่วมกัน — แต่ละตัวได้รับการฝึกด้านข้อกำหนดทางกฎหมายเฉพาะของอาหารประเภทต่างๆ ระบบการรับรอง และเส้นทางการจัดหา',
 risk_l1:'การปฏิเสธนำเข้าอาหารของยุโรปในปี 2024 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite>',
 risk_l2:'ของการปฏิเสธเกิดจากความล้มเหลวด้านเอกสาร <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite>',
 risk_l3:'ต่อเหตุการณ์กักตั้ง FDA ครั้งหนึ่ง <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(FDA Import Program)</cite>',
@@ -3733,6 +3884,7 @@ stat_l1:'lô hàng nhập khẩu bị từ chối<br>do lỗi tài liệu <cite 
 stat_l2:'tối đa, mỗi lần<br>bị FDA tạm giữ <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(FDA Import Program)</cite>',
 stat_l3:'tài liệu trở lên cần cho<br>một lô hàng nhập khẩu thực phẩm EU phức tạp',
 stat_l4:'trung bình để xác định nguồn<br>ô nhiễm thực phẩm <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(nghiên cứu truy xuất ngành)</cite>',
+agents_desc:'Các tác nhân chuyên biệt hoạt động phối hợp — mỗi tác nhân được đào tạo về yêu cầu quy định cụ thể của các loại thực phẩm, hệ thống chứng nhận và hành lang cung ứng khác nhau.',
 risk_l1:'Lô hàng thực phẩm bị EU từ chối năm 2024 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite>',
 risk_l2:'Tỷ lệ từ chối do lỗi tài liệu <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite>',
 risk_l3:'Mỗi vụ bị FDA tạm giữ <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(FDA Import Program)</cite>',
@@ -3794,6 +3946,7 @@ stat_l1:'的进口拒绝由<br>文件错误引起 <cite style="font-size:0.6rem;
 stat_l2:'最高，每次<br>FDA扣押事件 <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(FDA进口计划)</cite>',
 stat_l3:'份或更多文件用于<br>复杂的欧盟食品进口货物',
 stat_l4:'平均识别食品<br>污染源时间 <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(行业溯源研究)</cite>',
+agents_desc:'专业智能体协同工作 — 每个智能体均针对不同食品类型、认证制度和采购走廊的具体法规要求进行专项训练。',
 risk_l1:'2024年欧洲食品进口拒绝次数 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(欧盟委员会TRACES)</cite>',
 risk_l2:'拒绝由文件错误引起 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(欧盟委员会TRACES)</cite>',
 risk_l3:'每次FDA扣押事件费用 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(FDA进口计划)</cite>',
@@ -3855,6 +4008,7 @@ stat_l1:'das rejeições de importação são<br>falhas documentais <cite style=
 stat_l2:'máximo, por evento<br>de detenção da FDA <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(FDA Import Program)</cite>',
 stat_l3:'documentos ou mais exigidos para um<br>embarque complexo de importação de alimentos na EU',
 stat_l4:'média para identificar a fonte<br>de contaminação alimentar <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(estudos de rastreabilidade do setor)</cite>',
+agents_desc:'Agentes especializados trabalhando em combinação — cada um treinado nos requisitos regulatórios específicos de diferentes tipos de alimentos, regimes de certificação e corredores de fornecimento.',
 risk_l1:'Rejeições de importação de alimentos europeus em 2024 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(Comissão Europeia TRACES)</cite>',
 risk_l2:'das rejeições são falhas documentais <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(Comissão Europeia TRACES)</cite>',
 risk_l3:'por incidente de detenção da FDA <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(FDA Import Program)</cite>',
@@ -3910,6 +4064,150 @@ pilot_p4:'A aplicação da EUDR está em vigor. O FSMA 204 está vigente. A jane
 pilot_cal_lbl:'Prefere conversar primeiro?',pilot_cal_link:'Agende uma chamada com Onno & Thomas →',
 succ_title:'Mensagem recebida.',succ_body:'Onno ou Thomas entrará em contato em até um dia útil.',
 wto_label:'INTELIGÊNCIA REGULATÓRIA AO VIVO',chat_title:'VeriPura · Pergunte aos Fundadores',chat_sub:'Assistente automatizado · Onno & Thomas respondem',ask_you:'Você'
+},
+ar:{
+stat_l1:'من رفضيات الاستيراد<br>ناجمة عن إخفاقات وثائقية <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(TRACES)</cite>',
+stat_l2:'كحد أقصى، لكل حادثة<br>احتجاز من FDA <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(برنامج الاستيراد FDA)</cite>',
+stat_l3:'وثيقة أو أكثر مطلوبة<br>لشحنة استيراد غذاء أوروبية معقدة',
+stat_l4:'متوسط الوقت لتحديد مصدر<br>تلوث غذائي <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(دراسات تتبع القطاع)</cite>',
+agents_desc:'عوامل متخصصة تعمل بالتنسيق — كلٌّ منها مدربة على المتطلبات التنظيمية المحددة لأنواع مختلفة من الأغذية وأنظمة التصديق وممرات التوريد.',
+risk_l1:'رفض استيراد غذاء أوروبي في 2024 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(المفوضية الأوروبية TRACES)</cite>',
+risk_l2:'من الرفضيات ناجمة عن إخفاقات وثائقية <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(المفوضية الأوروبية TRACES)</cite>',
+risk_l3:'لكل حادثة احتجاز FDA <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(برنامج الاستيراد FDA)</cite>',
+risk_l4:'متوسط التتبع إلى مصدر التلوث <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(دراسات تتبع القطاع)</cite>',
+cpi_title:'اعرف مخاطر ممرك',
+cpi_desc:'يحمل كل ممر توريد ملف مخاطر امتثال مختلفًا. كلما اتسعت الفجوة بين درجة CPI لسوق المنشأ وتوقعات السوق المستهدف، زادت مخاطرك الوثائقية.',
+cpi_recv_lbl:'أسواق الاستقبال',cpi_recv_val:'المملكة المتحدة وأوروبا الغربية وكندا والولايات المتحدة',cpi_recv_sub:'متوسط CPI 79',
+cpi_orig_lbl:'ممرات المنشأ',cpi_orig_val:'الجنوب العالمي',cpi_orig_sub:'متوسط CPI 35',
+cpi_gap_arrow:'← فجوة النقاط →',
+pc1_title:'لكل حادثة احتجاز FDA',pc1_desc:'يمكن أن يكلف الاحتجاز التلقائي من FDA الناجم عن خطأ وثائقي عشرات الآلاف من الدولارات في رسوم التخزين وتكاليف إعادة الفحص والبضائع الضائعة — قبل أن تصل البضائع إلى المشتري.',
+pc2_title:'رفضيات استيراد الغذاء الأوروبية في 2024',pc2_desc:'تجاوزت رفضيات ضبط الحدود الأوروبية 14,000 لمنتجات الغذاء الحيوانية في 2024 وحدها. اللوائح الجديدة بما فيها EU 2017/625 وEUDR ترفع معايير الوثائق باستمرار.',
+pc3_title:'وقت الفحص FDA لكل شحنة',pc3_desc:'تنص FDA على أن فحص الشحنة قد يستغرق "من ساعات إلى أسابيع". كل يوم تتراكم رسوم التخزين ومخاطر التلف وغرامات المشترين.',
+pc4_title:'متوسط وقت تحديد التلوث',pc4_desc:'عند حدوث تلوث، يستغرق تحديد المصدر عبر السجلات الورقية المبعثرة 14 يومًا في المتوسط. تُقلّص VeriPura سلسلة الحضانة غير القابلة للتلاعب هذا الوقت بشكل ملحوظ.',
+err_label:'أكثر أخطاء الوثائق شيوعًا التي ترصدها VeriPura',
+err1_t:'عدم تطابق توقيع الجهة',err1_d:'شهادة صحة النبات أو الصحة موقّعة من جهة غير معترف بها في السوق المستهدف.',
+err2_t:'خطأ في كود FDA Prior Notice',err2_d:'كود وصف المنتج خاطئ أو مفقود يتسبب في احتجاز تلقائي من نظام FDA PREDICT.',
+err3_t:'رفض تنسيق TRACES NT',err3_d:'خطأ في تنسيق وثيقة الدخول المشتركة (CED) أو حقل مفقود يمنع قبول TRACES NT قبل الوصول.',
+err4_t:'انتهاء الشهادة عند الوصول',err4_d:'الشهادة سارية عند الإصدار لكنها منتهية الصلاحية حين تصل الشحنة إلى نقطة تفتيش الحدود.',
+err5_t:'عدم تطابق رقم المنشأة',err5_d:'رقم منشأة الذبح أو التصنيع لا يطابق القائمة المعتمدة في السوق المستهدف.',
+err6_t:'غياب سجلات الاجتهاد الواجب EUDR',err6_d:'لا توجد بيانات جغرافية أو إفادة بعدم التشجير للسلع المتأثرة بـ EUDR — رفض على حدود الاتحاد الأوروبي.',
+imp_m1_l:'متوسط تحديد مصدر التلوث الغذائي بدون تتبع',imp_m2_l:'مقابل ساعات لمراجعة الامتثال الكاملة',imp_m3_l:'سير عمل منظّم، لا صندوق أسود',imp_m4_l:'سجل تدقيق غير قابل للتلاعب مثبّت على البلوكشين',
+imp_p1:'التحقق من جميع وثائق الاستيراد قبل المغادرة لا عند الحدود',imp_p2:'فحوصات تلقائية وفق EU 2017/625 وFDA FSMA وUK FRCR',imp_p3:'تسجيل مخاطر في الوقت الفعلي حسب ممر التوريد وفئة المنتج',imp_p4:'سجلات امتثال غير قابلة للتلاعب للتدقيق والعناية الواجبة للمشتري',
+imp_corr_lbl:'الأطر التنظيمية المشمولة',imp_callout_p:'نحن انتقائيون بتعمّد. يساهم المشاركون المؤسسون في تشكيل المنتج، وإتمام التجربة مجانًا، والحصول على أسعار تفضيلية عند التحويل.',
+ff_m1_l:'معالجة شحنات متعددة في سير عمل واحد',ff_m2_l:'متصل بأنظمتك الحالية',ff_m3_l:'تقارير امتثال للعملاء دون تحضير يدوي',ff_m4_l:'تحقق دائم دون اختناقات في الكوادر',
+ff_p1:'معالجة مجمّعة لفحوصات الامتثال عبر شحنات نشطة متعددة',ff_p2:'تنبيه فوري عند انتهاء الصلاحية أو التوقيعات الناقصة أو عدم تطابق الجهة',ff_p3:'تقارير امتثال للعملاء تُنشأ تلقائيًا',ff_p4:'تكامل API مع نظام TMS أو إدارة الوثائق الحالي',
+ff_corr_lbl:'الأطر المدعومة',ff_callout_p:'يساهم الشركاء المؤسسون في تشكيل برنامج القناة، وإتمام التجربة مجانًا، والحصول على أسعار تفضيلية.',
+car_m1_l:'مراجعة الامتثال قبل الوصول إلى الميناء',car_m2_l:'تكلفة الاحتجاز المتجنَّبة لكل حادثة',car_m3_l:'سلسلة حضانة غير قابلة للتلاعب لحماية المسؤولية',car_m4_l:'إرشادات المعالجة لا مجرد إشارات تحذير',
+car_p1:'تسجيل الامتثال المسبق للوصول لجميع بيانات البضائع الغذائية',car_p2:'تحديد فوري للشحنات المعرضة لخطر الإيقاف الجمركي',car_p3:'سلسلة حضانة غير قابلة للتلاعب لحماية المسؤولية',car_p4:'إرشادات معالجة منظّمة — ليست مجرد إشارات بل حلول',
+car_corr_lbl:'موانئ الدخول الرئيسية',car_callout_p:'يساهم الشركاء المؤسسون في تشكيل برنامج القناة، وإتمام التجربة مجانًا، والحصول على أسعار تفضيلية.',
+tc1_t:'محرك الذكاء الاصطناعي الوثائقي',tc1_d:'تستخرج طبقة الذكاء الوثائقي في VeriPura البيانات وتتحقق منها من أي تنسيق — ملفات PDF وشهادات ممسوحة ووثائق متعددة اللغات — في ثوانٍ لا ساعات.',tc1_tag:'متعدد التنسيقات · متعدد اللغات',
+tc2_t:'محرك القواعد التنظيمية',tc2_d:'مكتبة محدَّثة باستمرار لمتطلبات استيراد الغذاء عبر أوروبا والولايات المتحدة والمملكة المتحدة وما بعدها — يُفحص كل حقل في الوثيقة في الوقت الفعلي.',tc2_tag:'أوروبا · FDA · المملكة المتحدة · EUDR',
+tc3_t:'سجل بلوكشين IOTA',tc3_d:'يُثبَّت كل حكم امتثال على بلوكشين IOTA Rebased — سجل غير قابل للتلاعب يمكن لأي طرف معتمد التحقق منه فورًا.',tc3_tag:'IOTA Rebased · TWIN',
+tc4_t:'ذكاء مخاطر الممرات',tc4_d:'مبني على بيانات رفض FDA وإحصاءات رفض TRACES الأوروبية وذكاء الحدود البريطانية، تُسجّل VeriPura كل ممر توريد وفق ملف المخاطر الخاص به.',tc4_tag:'مبني على 65,000+ سجل من قاعدة بيانات رفض FDA',
+tc5_t:'بيانات اعتماد قابلة للتحقق',tc5_d:'باستخدام IOTA Identity وW3C Verifiable Credentials، تُصدر VeriPura شهادات امتثال مقروءة آليًا قابلة للمشاركة فورًا مع المشترين والمدققين والسلطات الحدودية.',tc5_tag:'W3C VCs · IOTA Identity',
+tc6_t:'تكامل API والأنظمة',tc6_d:'تتصل VeriPura عبر API بنظام TMS أو ERP أو إدارة الوثائق الحالي. ذكاء الامتثال يُضاف فوق سير عملك الحالي.',tc6_tag:'API · Webhook',
+exp_label:'توسّع المنصة',exp_s1:'غذاء',exp_s2:'فيتامينات ومكملات',exp_s3:'أدوية',exp_s4:'مستحضرات تجميل',exp_s5:'غذاء الحيوانات الأليفة',
+ch_c1_t:'حصة إيرادات على كل شحنة',ch_c1_d:'يحصل شركاء القناة على حصة من إيرادات اشتراكات VeriPura وإيرادات الإشهاد لكل شحنة عن كل عميل يُقدّمونه.',
+ch_c2_t:'احمِ نفسك من مسؤولية العميل',ch_c2_d:'حين تُرفض شحنة على الحدود، ينظر المستورد إلى وكيل شحنه أولًا. توفّر VeriPura سجلًا موثّقًا ومشهودًا على البلوكشين لكل فحص امتثال أُجري.',
+ch_c3_t:'وسّع عرضك الخدمي',ch_c3_d:'يصبح التحقق من الامتثال عبر VeriPura خدمة ذات قيمة مضافة تقدّمها إلى جانب الشحن. العملاء الذين يستوردون من ممرات عالية المخاطر يحتاجون هذه الإمكانية الآن.',
+ch_ps1_l:'شحنات غذاء رُفض دخولها إلى الاتحاد الأوروبي في 2024',ch_ps2_l:'من الرفضيات ناجمة عن إخفاقات وثائقية',ch_ps3_l:'كحد أقصى، لكل حادثة احتجاز FDA',ch_ps4_l:'متوسط تحديد مصدر التلوث الغذائي',
+onno_title:'الرئيس التنفيذي والمؤسس المشارك',thomas_title:'المدير التشغيلي والمؤسس المشارك',
+onno_bio:'أكثر من 18 عامًا في مجال تصدير واستيراد الغذاء والامتثال عبر جنوب شرق آسيا وأوروبا. خبير في الامتثال لاستيراد الغذاء في الاتحاد الأوروبي مع شبكة نشطة في هولندا وسويسرا وألمانيا. المعرفة التنظيمية المُضمَّنة في محرك الامتثال في VeriPura هي خبرته المؤسسية.',
+thomas_bio:'رائد أعمال متسلسل وحائز براءة اختراع جمع 14 مليون يورو في مشاريعه السابقة. مؤسس أول شركة للزراعة في البيئة المتحكمة في أمريكا الجنوبية. مقيم في إيطاليا مع خلفية واسعة في طرح السوق B2B في البيئات الابتكارية.',
+app_c1_name:'VeriPura Label',app_c1_desc:'أداة التحقق من امتثال ملصقات الغذاء بالذكاء الاصطناعي. ارفع أي ملصق غذائي وتحقق منه فورًا وفق المتطلبات القانونية لسوقك المستهدف — المكونات وإفادات المواد المسببة للحساسية والمطالبات الغذائية والحقول التنظيمية الإلزامية.',app_c1_link:'افحص ملصقًا غذائيًا للتحقق من الامتثال ←',
+app_c2_name:'VeriPura Nutritional',app_c2_desc:'تحليل غذائي وتحقق آلي. احسب وتحقق من الحقائق الغذائية للوصفات المعقدة — مستبدلًا الأوراق اليدوية البطيئة بملفات غذائية فورية ودقيقة.',app_c2_link:'تحقق من إفادة غذائية ←',
+app_c3_name:'المزيد قريبًا',app_c3_desc:'نبني باستمرار تطبيقات جديدة تستهدف نقاط الاحتكاك الأعلى في الامتثال لاستيراد الغذاء. الوحدات قيد التطوير تشمل التحقق من حزم وثائق الشحنة وتقارير الاجتهاد الواجب في مجال الاستدامة.',
+pilot_imp_lbl:'أماكن المستوردين',pilot_par_lbl:'أماكن الشركاء',
+pilot_lead:'نحن انتقائيون بتعمّد. يعمل المشاركون المؤسسون مباشرةً مع Onno وThomas — لا مع فريق إعداد — لإجراء تجربة حية على شحناتهم الفعلية.',
+pilot_p1:'التجربة مجانية. لا يلزم أي التزام للمشاركة.',
+pilot_p2:'يحصل المشاركون المؤسسون على أسعار تفضيلية عند التحويل — غير متاحة للعملاء اللاحقين.',
+pilot_p3:'أنت تساعد في تشكيل أولويات VeriPura — الممرات والأطر وأنواع الوثائق الأهم لأعمالك.',
+pilot_p4:'تطبيق EUDR ساري. FSMA 204 مُفعَّل. الوقت للسبق هو الآن.',
+pilot_cal_lbl:'تفضّل بالتحدث أولًا؟',pilot_cal_link:'جدوِل مكالمة مع Onno وThomas ←',
+succ_title:'تم استقبال رسالتك.',succ_body:'سيتواصل معك Onno أو Thomas خلال يوم عمل واحد.',
+wto_label:'ذكاء تنظيمي حي',chat_title:'VeriPura · اسأل المؤسسين',chat_sub:'مساعد آلي · Onno وThomas يجيبان',ask_you:'أنت'
+},
+es:{
+stat_l1:'de los rechazos de importación son<br>fallos documentales <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(TRACES)</cite>',
+stat_l2:'hasta, por evento de<br>retención de la FDA <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(Programa de Importación FDA)</cite>',
+stat_l3:'documentos o más requeridos para<br>un envío complejo de alimentos a la UE',
+stat_l4:'promedio para identificar la fuente<br>de contaminación alimentaria <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(estudios de trazabilidad del sector)</cite>',
+agents_desc:'Agentes especializados trabajando en combinación — cada uno entrenado en los requisitos regulatorios específicos de diferentes tipos de alimentos, regímenes de certificación y corredores de abastecimiento.',
+risk_l1:'Rechazos de importación de alimentos en Europa en 2024 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(Comisión Europea TRACES)</cite>',
+risk_l2:'de los rechazos son fallos documentales <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(Comisión Europea TRACES)</cite>',
+risk_l3:'hasta, por evento de retención de la FDA <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(Programa de Importación FDA)</cite>',
+risk_l4:'de retenciones de la FDA desencadenadas por errores documentales corregibles antes de la salida <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(análisis interno VeriPura)</cite>',
+cpi_title:'Ejemplo: Error de Precio en CED',
+cpi_desc:'Un error de precio en el Documento de Entrada Común hace que TRACES NT rechace el envío — el mismo error que VeriPura detecta antes de la salida.',
+cpi_recv_lbl:'Valor Recibido',
+cpi_recv_val:'EUR&nbsp;<span style="font-size:1.4rem;font-weight:700;">4.200</span>',
+cpi_recv_sub:'declarado en CED',
+cpi_gap_arrow:'≠ desajuste',
+cpi_orig_lbl:'Valor Original',
+cpi_orig_val:'EUR 4.800',
+cpi_orig_sub:'en factura comercial',
+pc1_title:'Documentación Incompleta',pc1_desc:'Faltan campos obligatorios en los CEDs, las declaraciones de Prior Notice o los certificados fitosanitarios — detectados antes de la salida.',
+pc2_title:'Discrepancias de Datos',pc2_desc:'Los valores de la factura comercial no coinciden con los del CED, o los números de establecimiento no coinciden con las listas aprobadas por la FDA.',
+pc3_title:'Tiempo hasta la Resolución',pc3_desc:'Sin VeriPura, identificar y corregir errores documentales después del rechazo en frontera lleva horas o semanas.',
+pc4_title:'Errores de Certificación',pc4_desc:'Certificados vencidos, sellos de autoridad incorrectos o referencias desactualizadas a listas de establecimientos — todos señalados antes de la salida.',
+err_label:'Errores Comunes de Documentación',
+err1_t:'Firma de Autoridad No Coincide',err1_d:'La firma en el certificado fitosanitario o sanitario no coincide con la autoridad competente registrada para el país de origen.',
+err2_t:'Código de Producto Incorrecto',err2_d:'El código de descripción del producto en el Prior Notice de la FDA no coincide con los códigos de línea arancelaria del cargamento.',
+err3_t:'Formato de CED Rechazado por TRACES',err3_d:'El Documento de Entrada Común contiene errores de formato que TRACES NT rechaza — campos faltantes, tipos de datos incorrectos o inconsistencias de estructura.',
+err4_t:'Número de Establecimiento No Válido',err4_d:'El número de establecimiento del productor o procesador no aparece en la lista de establecimientos aprobados por la FDA o la UE.',
+err5_t:'Certificado Vencido al Llegar',err5_d:'El certificado fitosanitario o sanitario vence durante el tránsito o ya estaba vencido cuando se presentó el envío.',
+err6_t:'Documentación EUDR Ausente',err6_d:'Para las materias primas afectadas por el Reglamento de Deforestación de la UE, falta la declaración de diligencia debida o los datos de geolocalización.',
+imp_m1_l:'Ahorro en Retenciones de FDA',imp_m2_l:'Coste Operativo por Contenedor',imp_m3_l:'Tasa de Rechazo Documental UE',imp_m4_l:'Plazo de Resolución sin VeriPura',
+imp_p1:'Cada documento de importación verificado contra los requisitos de frontera antes de la salida',
+imp_p2:'Fallos de certificados fitosanitarios, sanitarios y de análisis señalados automáticamente',
+imp_p3:'Brechas en la documentación EUDR identificadas antes de que zarpe el contenedor',
+imp_p4:'Registro de cumplimiento certificado en blockchain generado para cada envío',
+imp_corr_lbl:'Con corrección previa a la salida',imp_callout_p:'Somos deliberadamente selectivos. Los participantes fundadores ayudan a dar forma al producto, completan el piloto sin coste y reciben precios preferenciales al convertirse en clientes.',
+ff_m1_l:'Ingresos por Verificación',ff_m2_l:'Tiempo de Procesamiento por Envío',ff_m3_l:'Reducción de Disputas con Clientes',ff_m4_l:'Registros Certificados en Blockchain',
+ff_p1:'Procesamiento por lotes de verificaciones de cumplimiento en múltiples envíos activos',
+ff_p2:'Informes de cumplimiento para clientes generados automáticamente',
+ff_p3:'Fechas de vencimiento y firmas faltantes señaladas antes de la salida',
+ff_p4:'Registro certificado en blockchain para cada verificación — protección en disputas',
+ff_corr_lbl:'Coste del error sin verificación',ff_callout_p:'Los socios fundadores ayudan a dar forma al programa de canal, completan el piloto sin coste y reciben precios preferenciales al convertirse en clientes.',
+car_m1_l:'Reducción de Retenciones en Puerto',car_m2_l:'Coste de Demora por Contenedor',car_m3_l:'Tiempo de Verificación por Envío',car_m4_l:'Pista de Auditoría Certificada',
+car_p1:'Verificación de cumplimiento previa a la llegada del paquete documental completo',
+car_p2:'Errores que desencadenarían retenciones de la FDA o rechazos de TRACES identificados antes de zarpar',
+car_p3:'Pista de auditoría certificada en blockchain para cada verificación de envío',
+car_p4:'Integración con los sistemas de gestión de carga existentes',
+car_corr_lbl:'Coste de retención sin verificación',car_callout_p:'Los socios fundadores ayudan a dar forma al programa de canal, completan el piloto sin coste y reciben precios preferenciales al convertirse en clientes.',
+tc1_t:'Motor de Reglas Regulatorias',tc1_d:'Más de 2.000 reglas de validación mapeadas contra EU 2017/625, FDA FSMA, EUDR, FSMA 204, TRACES NT y UK FRCR — actualizadas cuando cambian los reglamentos.',tc1_tag:'Motor de Reglas',
+tc2_t:'Extracción de Documentos con IA',tc2_d:'La OCR y los modelos de lenguaje analizan certificados, facturas y declaraciones — extrayendo valores de campo estructurados de documentos no estructurados.',tc2_tag:'IA / ML',
+tc3_t:'Anclaje en Blockchain IOTA',tc3_d:'Cada verificación de cumplimiento está anclada en el tangle de IOTA — creando un registro de auditoría inmutable que protege en disputas de frontera.',tc3_tag:'Blockchain',
+tc4_t:'Flujo de Trabajo de 9 Etapas',tc4_d:'Cada envío pasa por Recepción, Mapeo, Análisis, Rastreo, Cumplimiento, Protección, Auditoría, Veredicto y Registro — produciendo un veredicto de cumplimiento accionable.',tc4_tag:'Flujo de Trabajo',
+tc5_t:'Portal de Socios de Canal',tc5_d:'Los transitarios y transportistas gestionan las verificaciones de múltiples clientes desde un único panel — con facturación y pista de auditoría integradas.',tc5_tag:'Portal B2B',
+tc6_t:'Alertas de Cambios Regulatorios',tc6_d:'Monitorización de cambios en la UE, FDA, EUDR y TRACES NT — con alertas automáticas cuando los requisitos afectan a tus corredores activos.',tc6_tag:'Monitorización',
+exp_label:'Experiencia Regulatoria',
+exp_s1:'Requisitos de frontera de la UE: EU 2017/625, TRACES NT, EUDR',
+exp_s2:'Cumplimiento de la FDA: FSMA, Prior Notice, FSMA 204 de trazabilidad',
+exp_s3:'Comercio agroalimentario en Asia Sudoriental y corredores hacia Europa',
+exp_s4:'Reglamentos de la cadena de frío e inocuidad alimentaria',
+exp_s5:'Sistemas de certificación: GlobalG.A.P., HACCP, BRC, IFS',
+ch_c1_t:'Transitarios',ch_c1_d:'Ofrece la verificación de documentos previa al embarque como servicio de valor añadido. Cobra por verificación o inclúyelo en tu tarifa de servicio.',
+ch_c2_t:'Transportistas y Agentes de Aduanas',ch_c2_d:'Reduce las retenciones en puerto verificando los paquetes documentales antes de la salida. Genera una pista de auditoría certificada para cada carga.',
+ch_c3_t:'Corredores y Consultores de Cumplimiento',ch_c3_d:'Añade la verificación automatizada de documentos a tu práctica de consultoría. Maneja más clientes con la misma capacidad de personal.',
+ch_ps1_l:'Socio de Integración de Carga',ch_ps2_l:'Proveedor de Plataforma TMS',ch_ps3_l:'Red de Agentes de Aduanas',ch_ps4_l:'Asociación de Cámaras de Comercio',
+onno_title:'CEO y Cofundador',
+onno_bio:'Onno Stienen aporta más de 15 años de experiencia en logística de comercio internacional y cumplimiento regulatorio agroalimentario. Ha trabajado en toda la cadena: importadores, transitarios y autoridades competentes de la UE. VeriPura nació de su experiencia directa con los fallos documentales que provocan rechazos en frontera.',
+thomas_title:'COO y Cofundador',
+thomas_bio:'Thomas Oberlin lidera la ingeniería de producto y las operaciones en VeriPura. Con experiencia en desarrollo de software empresarial y transformación digital, ha construido el flujo de cumplimiento de IA de 9 etapas que sustenta la plataforma — diseñado para manejar la complejidad regulatoria real de las importaciones alimentarias.',
+app_c1_name:'Verificador de Etiquetas',app_c1_desc:'Sube una etiqueta de alimento y VeriPura comprueba ingredientes, alérgenos y declaraciones nutricionales contra los requisitos de la UE y EE. UU.',app_c1_link:'Probar Verificador de Etiquetas →',
+app_c2_name:'Calculadora Nutricional',app_c2_desc:'Introduce tu receta y obtén un perfil nutricional verificado contra las bases de datos de composición de alimentos de la UE y EE. UU.',app_c2_link:'Probar Calculadora →',
+app_c3_name:'Piloto de Cumplimiento de Envíos',app_c3_desc:'Únete a nuestro piloto fundacional y obtén acceso anticipado al motor de verificación de documentos de importación completo.',
+chat_title:'VeriPura · Pregunta a los Fundadores',chat_sub:'Asistente automatizado · Onno & Thomas responden',
+pilot_imp_lbl:'Importador',pilot_par_lbl:'Socio',
+pilot_lead:'Estamos seleccionando un número limitado de importadores de alimentos y socios de canal para el piloto fundacional. Los participantes obtienen:',
+pilot_p1:'Acceso anticipado al motor de verificación de documentos completo',
+pilot_p2:'Precios fijos de por vida — bloqueados en la tarifa piloto',
+pilot_p3:'Influencia directa sobre el mapa de producto y las prioridades de integración',
+pilot_p4:'Soporte dedicado de los fundadores durante el proceso de incorporación',
+pilot_cal_lbl:'¿Prefieres hablar primero?',pilot_cal_link:'Reserva una llamada con Onno y Thomas →',
+succ_title:'Solicitud Recibida.',succ_body:'Onno o Thomas se pondrán en contacto en un día hábil.',
+wto_label:'INTELIGENCIA REGULATORIA EN VIVO',chat_title:'VeriPura · Pregunta a los Fundadores',chat_sub:'Asistente automatizado · Onno & Thomas responden',ask_you:'Tú'
 }
 };
 // Merge new translations into window._vpT
@@ -3956,6 +4254,7 @@ var extraMAP=[
   ['.stat-item:nth-child(2) .stat-label','stat_l2',true],
   ['.stat-item:nth-child(3) .stat-label','stat_l3',false],
   ['.stat-item:nth-child(4) .stat-label','stat_l4',true],
+  ['#agents-desc','agents_desc',false],
   ['.risk-stat-strip>.risk-stat:nth-child(1) .risk-stat-label','risk_l1',true],
   ['.risk-stat-strip>.risk-stat:nth-child(3) .risk-stat-label','risk_l2',true],
   ['.risk-stat-strip>.risk-stat:nth-child(5) .risk-stat-label','risk_l3',true],
@@ -3998,6 +4297,7 @@ var extraMAP=[
   ['#persona-importer .pain-list li:nth-child(3)','imp_p3',false],
   ['#persona-importer .pain-list li:nth-child(4)','imp_p4',false],
   ['#persona-importer .corridor-label','imp_corr_lbl',false],
+  ['#persona-importer .pilot-callout p','imp_callout_p',false],
   ['#persona-forwarder .persona-metrics .metric-box:nth-child(1) .label','ff_m1_l',false],
   ['#persona-forwarder .persona-metrics .metric-box:nth-child(2) .label','ff_m2_l',false],
   ['#persona-forwarder .persona-metrics .metric-box:nth-child(3) .label','ff_m3_l',false],
@@ -4007,6 +4307,7 @@ var extraMAP=[
   ['#persona-forwarder .pain-list li:nth-child(3)','ff_p3',false],
   ['#persona-forwarder .pain-list li:nth-child(4)','ff_p4',false],
   ['#persona-forwarder .corridor-label','ff_corr_lbl',false],
+  ['#persona-forwarder .pilot-callout p','ff_callout_p',false],
   ['#persona-carrier .persona-metrics .metric-box:nth-child(1) .label','car_m1_l',false],
   ['#persona-carrier .persona-metrics .metric-box:nth-child(2) .label','car_m2_l',false],
   ['#persona-carrier .persona-metrics .metric-box:nth-child(3) .label','car_m3_l',false],
@@ -4016,6 +4317,7 @@ var extraMAP=[
   ['#persona-carrier .pain-list li:nth-child(3)','car_p3',false],
   ['#persona-carrier .pain-list li:nth-child(4)','car_p4',false],
   ['#persona-carrier .corridor-label','car_corr_lbl',false],
+  ['#persona-carrier .pilot-callout p','car_callout_p',false],
   ['.tech-grid .tech-card:nth-child(1) .tech-title','tc1_t',false],
   ['.tech-grid .tech-card:nth-child(1) .tech-desc','tc1_d',false],
   ['.tech-grid .tech-card:nth-child(1) .tech-tag','tc1_tag',false],
@@ -4183,6 +4485,42 @@ pt:[
 "O VeriPura pode verificar os documentos que meu fornecedor envia antes de eu submetê-los à alfândega?",
 "Quais são os erros documentais de importação de alimentos mais comuns que causam rejeições na fronteira?",
 "Quais commodities alimentares são afetadas pelo Regulamento de Desmatamento da EU e qual documentação é exigida?"
+],
+ar:[
+"ما هي VeriPura؟",
+"كيف تمنع VeriPura الاحتجازات التلقائية من FDA؟",
+"أي وثائق استيراد تتحقق منها VeriPura؟",
+"ما الأطر التنظيمية التي تشملها VeriPura؟",
+"كيف تساعد VeriPura وكلاء الشحن؟",
+"كيف يقدّم وكلاء الشحن خدمة التحقق من الامتثال عبر VeriPura لعملائهم؟",
+"كيف تساعد VeriPura الناقلين والوسطاء الجمركيين على تقليل الإيقافات الجمركية على شحنات الغذاء؟",
+"ماذا يقدّم برنامج شراكة VeriPura لوكلاء الشحن والناقلين؟",
+"كيف تساعد VeriPura في الامتثال لـ EUDR في استيراد الغذاء؟",
+"كيف ينتج سير عمل VeriPura حكم الامتثال؟",
+"هل تحلّ VeriPura محل الوسيط الجمركي أو مستشار الامتثال؟",
+"ما هي TRACES NT ولماذا يستخدمها مستوردو الغذاء؟",
+"ما الذي تتطلبه FSMA 204 من مستوردي الغذاء وكيف تساعد VeriPura؟",
+"هل تستطيع VeriPura فحص الوثائق التي يرسلها موردي قبل تقديمها للجمارك؟",
+"ما أكثر أخطاء وثائق استيراد الغذاء شيوعًا التي تتسبب في رفض على الحدود؟",
+"أي سلع غذائية تتأثر بلائحة الاتحاد الأوروبي لإزالة الغابات وما الوثائق التي تتطلبها؟"
+],
+es:[
+"¿Qué es VeriPura?",
+"¿Cómo previene VeriPura las retenciones automáticas de la FDA?",
+"¿Qué documentos de importación verifica VeriPura?",
+"¿Qué marcos regulatorios cubre VeriPura?",
+"¿Cómo ayuda VeriPura a los transitarios?",
+"¿Cómo ofrecen los transitarios la verificación de cumplimiento de VeriPura a sus clientes?",
+"¿Cómo ayuda VeriPura a los transportistas y agentes de aduanas a reducir las retenciones aduaneras en envíos de alimentos?",
+"¿Qué ofrece el programa de socios de canal de VeriPura a los transitarios y transportistas?",
+"¿Cómo ayuda VeriPura con el cumplimiento del EUDR en importaciones de alimentos?",
+"¿Cómo produce el flujo de trabajo de VeriPura un veredicto de cumplimiento?",
+"¿VeriPura sustituye a un agente de aduanas o consultor de cumplimiento?",
+"¿Qué es TRACES NT y por qué lo usan los importadores de alimentos?",
+"¿Qué exige el FSMA 204 a los importadores de alimentos y cómo ayuda VeriPura?",
+"¿Puede VeriPura verificar los documentos que me envía mi proveedor antes de presentarlos en aduanas?",
+"¿Cuáles son los errores documentales más comunes en la importación de alimentos que provocan rechazos en frontera?",
+"¿Qué materias primas alimentarias están afectadas por el Reglamento de Deforestación de la UE y qué documentación exige?"
 ]
 };
 var FAQ_A={
@@ -4275,6 +4613,42 @@ pt:[
 "Sim. A validação de documentos de fornecedor é um dos principais casos de uso do VeriPura. Importadores fazem upload do pacote documental recebido do fornecedor — certificados fitossanitários, certificados sanitários, certificados de origem, certificados de análise — e o VeriPura verifica cada campo conforme os requisitos do mercado de destino antes que o importador submeta à alfândega ou o embarque parta. Erros que desencadeariam uma rejeição na fronteira ou detenção da FDA são identificados no momento em que ainda são corrigíveis: antes do container partir.",
 "Os erros documentais mais comuns na conformidade de importação de alimentos incluem: incompatibilidades de assinatura de autoridade em certificados fitossanitários ou sanitários; códigos de descrição de produto incorretos ou ausentes em submissões de Prior Notice à FDA; erros de formato de Documentos de Entrada Comuns que o TRACES NT rejeita; números de estabelecimento que não correspondem às listas aprovadas; certificados que venceram quando o embarque chega; e registros de due diligence EUDR ausentes para commodities afetadas. O VeriPura verifica tudo isso conforme os requisitos do mercado de destino antes da partida.",
 "A EUDR se aplica a bovinos, cacau, café, óleo de palma, soja, madeira e produtos derivados — incluindo carne bovina, produtos de chocolate, blends de café, derivados de óleo de palma e ingredientes à base de soja. Importadores devem fornecer declarações de due diligence demonstrando que as commodities foram produzidas em terra não sujeita a desmatamento após dezembro de 2020, com dados de geolocalização e documentação de cadeia de suprimentos. O VeriPura verifica que a documentação de due diligence EUDR exigida está presente e completa antes da partida."
+],
+ar:[
+"VeriPura خدمة للتحقق من الامتثال لاستيراد الغذاء قبل الشحن. تتحقق من وثائق الاستيراد — شهادات صحة النبات والشهادات الصحية وشهادات المنشأ وشهادات التحليل والإفادات التنظيمية — وفق متطلبات حدود الاتحاد الأوروبي والولايات المتحدة والمملكة المتحدة قبل مغادرة الحاوية، باستخدام سير عمل امتثال AI من 9 مراحل.",
+"تُحفَّز الاحتجازات التلقائية من FDA عادةً بسبب أخطاء في الوثائق — رمز منتج غير صحيح في الإشعار المسبق، حقل مفقود، أو عدم تطابق الجهة. تتحقق VeriPura من كل حقل ذي صلة وفق متطلبات FDA FSMA قبل مغادرة الشحنة وتُحدد المشكلات للتصحيح. قد يكلف الاحتجاز 30,000–50,000 دولار؛ الخطأ ذاته إذا صُحِّح قبل المغادرة لا يكلّف سوى وثيقة مصحَّحة.",
+"تتحقق VeriPura من شهادات صحة النبات والشهادات الصحية وشهادات المنشأ وشهادات التحليل ووثائق الدخول المشتركة (CEDs) وتقديمات الإشعار المسبق لـ FDA وشهادات التبخير وغيرها من الوثائق التي يتطلبها الإطار التنظيمي للسوق المستهدف.",
+"تشمل VeriPura لائحة EU 2017/625 وFDA FSMA وEUDR (لائحة إزالة الغابات الأوروبية) ومتطلبات تتبع FSMA 204 وTRACES NT وUK FRCR. أطر إضافية متاحة بناءً على الطلب.",
+"يستخدم وكلاء الشحن VeriPura للمعالجة الجماعية لعمليات التحقق من الامتثال على شحنات نشطة متعددة في وقت واحد. تُحدد VeriPura تواريخ الانتهاء والتوقيعات المفقودة وعدم تطابق الجهات، وتُنشئ تقارير امتثال للعملاء تلقائيًا. كل عملية تحقق تُنتج سجلًا مُعتمدًا بالبلوكشين — مما يحمي الوكلاء من نزاعات العملاء عند رفض الشحنات.",
+"ينضم وكلاء الشحن إلى برنامج شراكة قناة VeriPura ويقدّمون التحقق من الوثائق قبل الشحن كخدمة مضافة. عندما تكون شحنة العميل جاهزة للتحرك، يُرسل الوكيل حزمة الوثائق عبر VeriPura. تتحقق VeriPura من كل وثيقة وفق متطلبات السوق المستهدف وتُعيد حكم الامتثال مع تحديد أي مشكلات قبل المغادرة. يحصل الوكيل على سجل امتثال مُعتمد بالبلوكشين لكل عملية تحقق تُجرى.",
+"تنشأ الاحتجازات الجمركية والتأخيرات في الموانئ على شحنات الغذاء في الغالب من أخطاء في الوثائق كان يمكن اكتشافها قبل المغادرة. تمنح VeriPura الناقلين والوسطاء الجمركيين فحص امتثال ما قبل الوصول: تُتحقَّق حزم الوثائق وفق متطلبات ميناء الوصول والنظام التنظيمي قبل إبحار السفينة. تُحدَّد الأخطاء التي قد تتسبب في احتجاز FDA أو رفض TRACES NT أو توقف عند الحدود الأوروبية وهي لا تزال قابلة للتصحيح. كما تُنتج VeriPura مسار تدقيق مُعتمد بالبلوكشين لكل عملية تحقق.",
+"يمنح برنامج شراكة قناة VeriPura وكلاء الشحن والناقلين ثلاثة أشياء: خدمة التحقق من الامتثال قبل الشحن التي يمكنهم تقديمها لعملائهم المستوردي الغذاء كمنتج مضاف القيمة؛ حصة من الإيرادات على كل شحنة يتم التحقق منها عبر قناتهم؛ وسجل امتثال مُعتمد بالبلوكشين لكل عملية تحقق يقلل بشكل ملموس من تعرضهم للمسؤولية عند مواجهة العملاء لنزاعات على الحدود.",
+"تتطلب لائحة إزالة الغابات الأوروبية (EUDR) من المستوردين إثبات أن السلع المحددة — بما في ذلك اللحوم البقرية والصويا والكاكاو والقهوة وزيت النخيل — لم تساهم في إزالة الغابات. تتحقق VeriPura من وثائق الاجتهاد الواجب لـ EUDR كجزء من سير عملها قبل الشحن، مع تحديد الثغرات قبل المغادرة.",
+"تعالج VeriPura كل شحنة عبر 9 مراحل: الاستقبال (رفع الوثائق)، والتعيين (رمز HS وتحديد الممر)، والتحليل (استخراج الحقول بالذكاء الاصطناعي)، والتتبع (ربط سلسلة التوريد)، والامتثال (فحص قواعد EU وFDA)، والحماية (تسجيل المخاطر)، والمدقق (إنشاء مسار التدقيق)، والحكم (النجاح أو الفشل أو التصحيح مع توجيه العلاج)، والسجل (ربط بلوكشين IOTA).",
+"لا. تُؤتمت VeriPura التحقق من الوثائق وفحص الامتثال وفق المتطلبات التنظيمية المعروفة. تُستخدم من قِبل المستوردين والوكلاء والناقلين والوسطاء — لا كبديل للاستشارات الجمركية أو القانونية المتخصصة. تتعامل مع الجزء المنهجي القابل للتكرار من الامتثال: التحقق من وجود الوثائق الصحيحة ومن اكتمالها وتوافقها مع المتطلبات التنظيمية.",
+"TRACES NT (نظام التحكم في التجارة والخبراء) هو المنصة الإلكترونية للمفوضية الأوروبية لإدارة الشهادات الصحية وشهادات صحة النبات لواردات الغذاء الداخلة إلى الاتحاد الأوروبي. يجب على المستوردين تقديم وثائق الدخول المشتركة (CEDs) عبر TRACES NT قبل وصول الشحنات إلى نقاط التفتيش الحدودية الأوروبية. تُعدّ أخطاء تنسيق الوثائق والحقول المفقودة وعدم التوافق بين CED والشحنة من أكثر أسباب رفض استيراد الغذاء الأوروبي شيوعًا. تتحقق VeriPura من الوثائق وفق متطلبات TRACES NT قبل المغادرة.",
+"تتطلب المادة 204 من قانون تحديث سلامة الغذاء (FSMA) من مستوردي الأغذية عالية المخاطر المحددة الاحتفاظ بسجلات التتبع وتقديمها، وهي سجلات تغطي عناصر البيانات الرئيسية في كل حدث تتبع حرج في سلسلة التوريد. يجب أن تكون هذه السجلات متاحة لـ FDA خلال 24 ساعة من الطلب. تتحقق VeriPura من وجود وثائق التتبع المطلوبة وصحة تنسيقها واتساقها مع الشحنة قبل المغادرة — وترسو السجلات على بلوكشين IOTA لتكون قابلة للاسترداد فورًا إذا طلبتها FDA.",
+"نعم. التحقق من وثائق الموردين هو أحد أهم حالات الاستخدام الأساسية لـ VeriPura. يرفع المستوردون حزمة الوثائق المستلمة من مورديهم — شهادات صحة النبات والشهادات الصحية وشهادات المنشأ وشهادات التحليل — وتتحقق VeriPura من كل حقل وفق متطلبات السوق المستهدف قبل تقديم المستورد للجمارك أو مغادرة الشحنة. تُكتشف الأخطاء التي قد تتسبب في رفض حدودي أو احتجاز FDA في اللحظة التي تكون فيها قابلة للتصحيح: قبل تحرك الحاوية.",
+"تشمل أكثر أخطاء وثائق استيراد الغذاء شيوعًا: عدم تطابق توقيع الجهة على شهادات صحة النبات أو الشهادات الصحية؛ رموز وصف المنتج الخاطئة في تقديمات الإشعار المسبق لـ FDA؛ أخطاء تنسيق وثائق الدخول المشتركة (CED) التي يرفضها TRACES NT؛ أرقام المنشآت غير المطابقة للقوائم المعتمدة؛ الشهادات المنتهية الصلاحية عند وصول الشحنة؛ وسجلات الاجتهاد الواجب لـ EUDR المفقودة للسلع المتأثرة. تتحقق VeriPura من كل ذلك وفق متطلبات السوق المستهدف قبل المغادرة.",
+"تنطبق EUDR على الأبقار والكاكاو والقهوة وزيت النخيل والصويا والأخشاب والمنتجات المشتقة — بما في ذلك اللحوم البقرية ومنتجات الشوكولاتة ومزيجات القهوة ومشتقات زيت النخيل والمكونات القائمة على الصويا. يجب على المستوردين تقديم بيانات الاجتهاد الواجب التي تثبت أن السلع أُنتجت على أراضٍ لم تتعرض لإزالة الغابات بعد ديسمبر 2020، مع بيانات التحديد الجغرافي ووثائق سلسلة التوريد. تتحقق VeriPura من وجود وثائق الاجتهاد الواجب لـ EUDR المطلوبة واكتمالها قبل المغادرة."
+],
+es:[
+"VeriPura es un servicio de verificación de cumplimiento para importación de alimentos previo al embarque. Valida la documentación de importación — certificados fitosanitarios, certificados sanitarios, certificados de origen, certificados de análisis y declaraciones regulatorias — contra los requisitos de frontera de la UE, EE. UU. y Reino Unido antes de que zarpe el contenedor, usando un flujo de trabajo de cumplimiento de IA de 9 etapas.",
+"Las retenciones automáticas de la FDA se desencadenan normalmente por errores documentales — un código de producto incorrecto en el Prior Notice, un campo faltante o una discrepancia de autoridad. VeriPura comprueba cada campo relevante contra los requisitos FDA FSMA antes de que zarpe el envío y señala los problemas para su corrección. Una retención puede costar entre 30.000 y 50.000 $; el mismo error corregido antes de la salida solo cuesta un documento corregido.",
+"VeriPura verifica certificados fitosanitarios, certificados sanitarios, certificados de origen, certificados de análisis, documentos de entrada comunes (CEDs), presentaciones de Prior Notice a la FDA, certificados de fumigación y otros documentos exigidos por el marco regulatorio del mercado de destino.",
+"VeriPura cubre el Reglamento UE 2017/625, FDA FSMA, EUDR (Reglamento de Deforestación de la UE), requisitos de trazabilidad FSMA 204, TRACES NT y UK FRCR. Se pueden solicitar marcos adicionales.",
+"Los transitarios usan VeriPura para procesar por lotes las verificaciones de cumplimiento de múltiples envíos activos simultáneamente. VeriPura señala fechas de vencimiento, firmas faltantes e inconsistencias de autoridad, y genera automáticamente informes de cumplimiento para los clientes. Cada verificación produce un registro certificado en blockchain que protege a los transitarios en disputas con clientes cuando se rechazan envíos.",
+"Los transitarios se unen al programa de socios de canal de VeriPura y ofrecen la validación de documentos previa al embarque como servicio de valor añadido. Cuando el envío de un cliente está listo para moverse, el transitario envía el paquete documental a través de VeriPura. VeriPura comprueba cada documento contra los requisitos del mercado de destino y devuelve un veredicto de cumplimiento con los problemas señalados antes de la salida. El transitario recibe un registro de cumplimiento certificado en blockchain por cada verificación realizada.",
+"Las retenciones aduaneras y los retrasos portuarios en envíos de alimentos se desencadenan con mayor frecuencia por errores documentales que podrían haberse detectado antes de la salida. VeriPura da a los transportistas y agentes de aduanas una verificación de cumplimiento previa a la llegada: los paquetes documentales se validan contra los requisitos del puerto de destino y el régimen regulatorio antes de que zarpe el buque. Los errores que desencadenarían una retención de la FDA, un rechazo de TRACES NT o una retención en frontera de la UE se identifican y señalan mientras aún son corregibles. VeriPura también produce una pista de auditoría certificada en blockchain para cada verificación.",
+"El programa de socios de canal de VeriPura ofrece a los transitarios y transportistas tres cosas: un servicio de verificación de cumplimiento previo al embarque que pueden ofrecer a sus clientes importadores de alimentos como producto de valor añadido; una participación en los ingresos por cada envío verificado a través de su canal; y un registro de cumplimiento certificado en blockchain por cada verificación que reduce materialmente su exposición a responsabilidad cuando los clientes enfrentan disputas en frontera.",
+"El Reglamento de Deforestación de la UE (EUDR) exige a los importadores que demuestren que determinadas materias primas — incluidas la carne de vacuno, la soja, el cacao, el café y el aceite de palma — no han contribuido a la deforestación. VeriPura comprueba la documentación de diligencia debida del EUDR como parte de su flujo de trabajo previo al embarque, señalando las lagunas antes de la salida.",
+"VeriPura procesa cada envío a través de 9 etapas: Recepción (carga de documentos), Mapeo (código HS e identificación de corredor), Análisis (extracción de campos con IA), Rastreo (vinculación de cadena de suministro), Cumplimiento (verificación de reglas UE y FDA), Protección (puntuación de riesgo), Auditoría (generación de pista de auditoría), Veredicto (aprobado, rechazado o corregir con orientación de remediación) y Registro (anclaje en blockchain IOTA).",
+"No. VeriPura automatiza la validación de documentos y la verificación de cumplimiento contra los requisitos regulatorios conocidos. Lo utilizan importadores, transitarios, transportistas y corredores — no como sustituto del asesoramiento aduanero o jurídico profesional. Gestiona la parte sistemática y repetible del cumplimiento: verificar que los documentos correctos están presentes, correctamente completados y son coherentes con los requisitos regulatorios.",
+"TRACES NT (Trade Control and Expert System) es la plataforma en línea de la Comisión Europea para gestionar certificados sanitarios y fitosanitarios para las importaciones de alimentos a la UE. Los importadores deben presentar Documentos de Entrada Comunes (CEDs) a través de TRACES NT antes de que los envíos lleguen a los puestos de inspección fronteriza de la UE. Los errores en el formato de los documentos, los campos faltantes o las discrepancias entre el CED y el cargamento son algunas de las causas más comunes de los rechazos de importación de alimentos en la UE. VeriPura valida la documentación contra los requisitos de TRACES NT antes de la salida.",
+"La Sección 204 de la Ley de Modernización de la Inocuidad Alimentaria de la FDA (FSMA) exige a los importadores de alimentos de alto riesgo designados que mantengan y proporcionen registros de trazabilidad que cubran los elementos de datos clave en cada evento de seguimiento crítico de la cadena de suministro. Estos registros deben estar disponibles para la FDA en un plazo de 24 horas a partir de una solicitud. VeriPura valida que la documentación de trazabilidad requerida está presente, correctamente formateada y es coherente con el envío antes de la salida — y ancla los registros en el blockchain IOTA para que sean inmediatamente recuperables si la FDA los solicita.",
+"Sí. La validación de documentos de proveedores es uno de los principales casos de uso de VeriPura. Los importadores cargan el paquete documental recibido de su proveedor — certificados fitosanitarios, certificados sanitarios, certificados de origen, certificados de análisis — y VeriPura comprueba cada campo contra los requisitos del mercado de destino antes de que el importador los presente en aduanas o zarpe el envío. Los errores que desencadenarían un rechazo en frontera o una retención de la FDA se detectan en el momento en que aún son corregibles: antes de que se mueva el contenedor.",
+"Los errores documentales más comunes en el cumplimiento de la importación de alimentos incluyen: discrepancias de firma de autoridad en certificados fitosanitarios o sanitarios; códigos de descripción de producto incorrectos o ausentes en presentaciones de Prior Notice a la FDA; errores de formato en Documentos de Entrada Comunes que TRACES NT rechaza; números de establecimiento que no coinciden con las listas aprobadas; certificados que vencen cuando llega el envío; y registros de diligencia debida del EUDR ausentes para las materias primas afectadas. VeriPura comprueba todo esto contra los requisitos del mercado de destino antes de la salida.",
+"El EUDR se aplica al ganado vacuno, el cacao, el café, el aceite de palma, la soja, la madera y sus productos derivados — incluida la carne de vacuno, los productos de chocolate, las mezclas de café, los derivados del aceite de palma y los ingredientes a base de soja. Los importadores deben proporcionar declaraciones de diligencia debida que demuestren que las materias primas se produjeron en terrenos no sometidos a deforestación después de diciembre de 2020, con datos de geolocalización y documentación de la cadena de suministro. VeriPura verifica que la documentación de diligencia debida del EUDR requerida está presente y completa antes de la salida."
 ]
 };
 var APP_F={
@@ -4302,6 +4676,16 @@ pt:[
 ["Valida listas de ingredientes e declarações de alérgenos","Verifica alegações nutricionais conforme regulamentos EU/EUA","Sinaliza campos obrigatórios ausentes por mercado-alvo","Previne recalls custosos por erros de rotulagem"],
 ["Calcula perfis nutricionais para receitas e formulações","Integra com sistemas laboratoriais e bancos de dados nutricionais","Verifica valores declarados em relação a valores calculados","Gera declarações nutricionais prontas para o mercado"],
 ["Validador de pacote documental de embarque","Rastreador de vencimento e renovação de certificados","Módulo de due diligence de desmatamento EUDR","Construtor de pré-notificação TRACES NT"]
+],
+ar:[
+["يتحقق من قوائم المكوّنات وإفادات المواد المسببة للحساسية","يفحص المطالبات الغذائية وفق لوائح الاتحاد الأوروبي والولايات المتحدة","يُحدد الحقول الإلزامية المفقودة حسب السوق المستهدف","يمنع عمليات السحب المكلفة الناجمة عن أخطاء الملصقات"],
+["يحسب الملفات الغذائية للوصفات والتركيبات","يتكامل مع أنظمة المختبرات وقواعد البيانات الغذائية","يتحقق من القيم المُعلنة مقابل القيم المحسوبة فعليًا","يُخرج إفادات غذائية جاهزة للسوق"],
+["أداة التحقق من حزمة وثائق الشحنة","متتبع انتهاء الصلاحية وتجديد الشهادات","وحدة الاجتهاد الواجب لإزالة الغابات EUDR","منشئ الإشعار المسبق لـ TRACES NT"]
+]
+,es:[
+["Valida listas de ingredientes y declaraciones de alérgenos","Comprueba las declaraciones nutricionales contra las normativas de la UE y EE. UU.","Señala los campos obligatorios faltantes por mercado de destino","Previene costosas retiradas del mercado por errores de etiquetado"],
+["Calcula perfiles nutricionales para recetas y formulaciones","Se integra con sistemas de laboratorio y bases de datos nutricionales","Verifica los valores declarados frente a los valores calculados reales","Genera declaraciones nutricionales listas para el mercado"],
+["Validador de paquete documental de envío","Rastreador de vencimiento y renovación de certificados","Módulo de diligencia debida de deforestación EUDR","Constructor de prenotificación TRACES NT"]
 ]
 };
 var X2={
@@ -4349,6 +4733,24 @@ about_dt2:"O que faz",about_dd2:"Valida documentação de importação conforme 
 about_dt3:"Por que antes da partida",about_dd3:"Falhas documentais causam 39% das recusas de importação de alimentos da EU (Comissão Europeia TRACES). Uma detenção da FDA custa até $50.000 (FDA Import Program). O mesmo erro corrigido antes da partida não custa nada além de um documento corrigido.",
 app_feedback_pre:"Já usou? ",app_feedback_link:"Conte-nos o que encontrou →",
 role_opt0:"Selecione seu cargo",role_opt1:"Importador de Alimentos",role_opt2:"Agente de Carga",role_opt3:"Despachante Aduaneiro",role_opt4:"Transportadora",role_opt5:"Investidor",role_opt6:"Outro"
+},
+ar:{
+about_eyebrow:"حول VeriPura",
+about_body:"VeriPura خدمة للتحقق من الامتثال لاستيراد الغذاء قبل الشحن. تتحقق من كل وثيقة استيراد — شهادات صحة النبات والشهادات الصحية وشهادات المنشأ والإفادات التنظيمية — وفق متطلبات حدود الاتحاد الأوروبي والولايات المتحدة والمملكة المتحدة قبل مغادرة الحاوية. يستخدمها مستوردو الغذاء ووكلاء الشحن والناقلون والوسطاء الجمركيون لتجنب احتجازات FDA ورفض الحدود الأوروبية وتأخيرات الشحن الوثائقية.",
+about_dt1:"لمن هو مخصص",about_dd1:"مستوردو الغذاء ووكلاء الشحن والناقلون والوسطاء الجمركيون الذين يستوردون إلى أوروبا أو الولايات المتحدة أو المملكة المتحدة من ممرات توريد عالية المخاطر.",
+about_dt2:"ما الذي يفعله",about_dd2:"يتحقق من وثائق الاستيراد وفق EU 2017/625 وFDA FSMA وEUDR وFSMA 204 وTRACES NT وUK FRCR — قبل مغادرة الشحنة، باستخدام سير عمل امتثال AI من 9 مراحل.",
+about_dt3:"لماذا قبل المغادرة",about_dd3:"تتسبب إخفاقات الوثائق في 39% من رفضيات استيراد الغذاء الأوروبية (TRACES). يكلّف احتجاز FDA ما يصل إلى 50,000 دولار (برنامج الاستيراد FDA). الخطأ ذاته إذا صُحِّح قبل المغادرة لا يكلّف سوى وثيقة مصحَّحة.",
+app_feedback_pre:"هل جرّبته؟ ",app_feedback_link:"أخبرنا بما وجدته ←",
+role_opt0:"اختر دورك",role_opt1:"مستورد غذاء",role_opt2:"وكيل شحن",role_opt3:"وسيط جمركي",role_opt4:"ناقل",role_opt5:"مستثمر",role_opt6:"أخرى"
+},
+es:{
+about_eyebrow:"Sobre VeriPura",
+about_body:"VeriPura es un servicio de verificación de cumplimiento para importación de alimentos previo al embarque. Comprueba cada documento de importación — certificados fitosanitarios, certificados sanitarios, certificados de origen y declaraciones regulatorias — contra los requisitos de frontera de la UE, EE. UU. y Reino Unido antes de que zarpe el contenedor. Importadores de alimentos, transitarios, transportistas y agentes de aduanas lo utilizan para prevenir retenciones de la FDA, rechazos en frontera de la UE y retrasos de envío por documentación.",
+about_dt1:"Para quién",about_dd1:"Importadores de alimentos, transitarios, transportistas y agentes de aduanas que importan a Europa, EE. UU. o Reino Unido desde corredores de abastecimiento de alto riesgo.",
+about_dt2:"Qué hace",about_dd2:"Valida la documentación de importación contra EU 2017/625, FDA FSMA, EUDR, FSMA 204, TRACES NT y UK FRCR — antes de que zarpe el envío, usando un flujo de trabajo de cumplimiento de IA de 9 etapas.",
+about_dt3:"Por qué antes de la salida",about_dd3:"Los fallos documentales causan el 39 % de los rechazos de importación de alimentos en la UE (TRACES). Una retención de la FDA cuesta hasta 50.000 $ (Programa de Importación FDA). El mismo error corregido antes de la salida solo cuesta un documento corregido.",
+app_feedback_pre:"¿Lo has probado? ",app_feedback_link:"Cuéntanos qué encontraste →",
+role_opt0:"Selecciona tu función",role_opt1:"Importador de Alimentos",role_opt2:"Transitario",role_opt3:"Agente de Aduanas",role_opt4:"Transportista",role_opt5:"Inversor",role_opt6:"Otro"
 }
 };
 Object.keys(X2).forEach(function(lng){if(window._vpT&&window._vpT[lng])Object.assign(window._vpT[lng],X2[lng]);});
@@ -4359,8 +4761,15 @@ function applyFAQ(){var l=document.documentElement.lang||'en';if(l==='zh-Hans')l
 function applyAppletFeatures(){var l=document.documentElement.lang||'en';if(l==='zh-Hans')l='zh';var af=APP_F[l]||APP_F.en;var cards=document.querySelectorAll('.applets-grid .applet-card');for(var c=0;c<cards.length&&c<af.length;c++){var lis=cards[c].querySelectorAll('.applet-features li');for(var i=0;i<lis.length&&i<af[c].length;i++)lis[i].textContent=af[c][i];}}
 function applyAppletFeedback(){var fbs=document.querySelectorAll('.applet-feedback');var pre=t3('app_feedback_pre');var lnk=t3('app_feedback_link');for(var i=0;i<fbs.length;i++){var a=fbs[i].querySelector('a');if(a){var tn=fbs[i].firstChild;if(tn&&tn.nodeType===3)tn.textContent=pre;a.textContent=lnk;}}}
 function applyRoleOptions(){var sel=document.getElementById('cf-role');if(!sel)return;var opts=sel.querySelectorAll('option');var keys=['role_opt0','role_opt1','role_opt2','role_opt3','role_opt4','role_opt5','role_opt6'];for(var i=0;i<opts.length&&i<keys.length;i++)opts[i].textContent=t3(keys[i]);}
-if(window.setLang){var _orig2=window.setLang;window.setLang=function(lng,btn){_orig2(lng,btn);applyAbout();applyTeamCards();applyFAQ();applyAppletFeatures();applyAppletFeedback();applyRoleOptions();};}
-document.addEventListener('DOMContentLoaded',function(){applyAbout();applyTeamCards();applyFAQ();applyAppletFeatures();applyAppletFeedback();applyRoleOptions();});
+function injectFAQSchema(){
+  var l=document.documentElement.lang||'en';if(l==='zh-Hans')l='zh';
+  var qs=FAQ_Q[l]||FAQ_Q.en, as=FAQ_A[l]||FAQ_A.en;
+  var el=document.getElementById('vp-faq-i18n');
+  if(!el){el=document.createElement('script');el.type='application/ld+json';el.id='vp-faq-i18n';document.head.appendChild(el);}
+  el.textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage','inLanguage':l,'mainEntity':qs.map(function(q,i){return{'@type':'Question','name':q,'acceptedAnswer':{'@type':'Answer','text':as[i]||''}};})});
+}
+if(window.setLang){var _orig2=window.setLang;window.setLang=function(lng,btn){_orig2(lng,btn);applyAbout();applyTeamCards();applyFAQ();applyAppletFeatures();applyAppletFeedback();applyRoleOptions();injectFAQSchema();};}
+document.addEventListener('DOMContentLoaded',function(){applyAbout();applyTeamCards();applyFAQ();applyAppletFeatures();applyAppletFeedback();applyRoleOptions();injectFAQSchema();});
 })();
 </script>
 
@@ -4401,6 +4810,20 @@ app_c3_link:"Entre no Piloto — Molde o Que Construímos a Seguir →",
 pc3_cost:"“Horas a semanas”",
 succ_bridge:"Onno ou Thomas entrará em contato em até um dia útil. Enquanto isso, você pode ",
 succ_link:"agendar uma chamada diretamente"
+},
+ar:{
+app_lead:"معظم منصات الامتثال تطلب منك الوثوق بعرض توضيحي. VeriPura تمنحك الأدوات. تطبيقان حيّان، لا تسجيل دخول ولا مكالمة مبيعات مطلوبة. ارفع ملصقك الخاص. جرّب وصفتك الخاصة. شاهد بالضبط كيف يفكر محرك الامتثال بالذكاء الاصطناعي — ثم قرّر إذا كنت تريده يعمل على كل شحنة.",
+app_c3_link:"انضم إلى التجربة — شكّل ما نبنيه لاحقًا ←",
+pc3_cost:"“ساعات إلى أسابيع”",
+succ_bridge:"سيتواصل معك Onno أو Thomas خلال يوم عمل واحد. في غضون ذلك، يمكنك ",
+succ_link:"حجز مكالمة مباشرة"
+}
+,es:{
+app_lead:"La mayoría de las plataformas de cumplimiento te piden que confíes en una demo. VeriPura te da las herramientas. Dos applets en vivo, sin inicio de sesión, sin llamada de ventas. Sube tu propia etiqueta. Ejecuta tu propia receta. Ve exactamente cómo piensa el motor de cumplimiento de IA — y luego decide si quieres que funcione en cada envío.",
+app_c3_link:"Únete al Piloto — Influye en lo que Construimos a Continuación →",
+pc3_cost:"“Horas o semanas”",
+succ_bridge:"Onno o Thomas se pondrán en contacto en un día hábil. Mientras tanto, puedes ",
+succ_link:"reservar una llamada directamente"
 }
 };
 Object.keys(X3).forEach(function(lng){if(window._vpT&&window._vpT[lng])Object.assign(window._vpT[lng],X3[lng]);});
@@ -4494,6 +4917,8 @@ document.addEventListener('DOMContentLoaded',function(){applySuccFull();});
     else if(nav.startsWith('vi'))detected='vi';
     else if(nav.startsWith('zh'))detected='zh';
     else if(nav.startsWith('pt'))detected='pt';
+    else if(nav.startsWith('ar'))detected='ar';
+    else if(nav.startsWith('es'))detected='es';
     if(detected==='en')return; // default — no action needed
     if(document.readyState==='loading'){
       document.addEventListener('DOMContentLoaded',function(){
